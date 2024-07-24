@@ -5,15 +5,17 @@ public class Grid
 {
     private int width;
     private int height;
-    private Vector2 cellSize; // Using Vector2 to handle width and height of each cell
+    private Vector2 cellSize; // Width and height of each cell
+    private Vector2 spacing; // Distance between grid objects
     private GridObject[,] gridObjects;  // Array to store the grid objects
     private int numberOfObjects; // Number of grid objects to spawn
 
-    public Grid(int width, int height, Vector2 cellSize, GridObject referenceGridObject, int numberOfObjects)
+    public Grid(int width, int height, Vector2 cellSize, Vector2 spacing, GridObject referenceGridObject, int numberOfObjects)
     {
         this.width = width;
         this.height = height;
         this.cellSize = cellSize;
+        this.spacing = spacing;
         this.numberOfObjects = numberOfObjects;
         InitializeGridObjects(referenceGridObject);
     }
@@ -21,20 +23,26 @@ public class Grid
     private void InitializeGridObjects(GridObject referenceGridObject)
     {
         gridObjects = new GridObject[width, height];
-        HashSet<Vector2Int> occupiedPositions = new HashSet<Vector2Int>();
+        List<Vector2Int> availablePositions = new List<Vector2Int>();
 
-        while (occupiedPositions.Count < numberOfObjects)
+        // Populate all possible positions
+        for (int x = 0; x < width; x++)
         {
-            int x = Random.Range(0, width);
-            int y = Random.Range(0, height);
-            Vector2Int position = new Vector2Int(x, y);
-
-            if (!occupiedPositions.Contains(position))
+            for (int y = 0; y < height; y++)
             {
-                occupiedPositions.Add(position);
-                GridObject newGridObject = ScriptableObject.Instantiate(referenceGridObject);
-                CreateGridObject(x, y, newGridObject);
+                availablePositions.Add(new Vector2Int(x, y));
             }
+        }
+
+        // Shuffle positions to randomize
+        Shuffle(availablePositions);
+
+        // Place objects at random positions
+        for (int i = 0; i < Mathf.Min(numberOfObjects, availablePositions.Count); i++)
+        {
+            Vector2Int position = availablePositions[i];
+            GridObject newGridObject = ScriptableObject.Instantiate(referenceGridObject);
+            CreateGridObject(position.x, position.y, newGridObject);
         }
     }
 
@@ -75,7 +83,10 @@ public class Grid
 
     private Vector3 GetWorldPosition(int x, int y)
     {
-        return new Vector3(x * cellSize.x, y * cellSize.y, 0);
+        // Calculate position with cellSize and spacing
+        return new Vector3(x * (cellSize.x + spacing.x) + spacing.x / 2, 
+                           y * (cellSize.y + spacing.y) + spacing.y / 2, 
+                           0);
     }
 
     private Color GetRandomColor()
@@ -118,5 +129,16 @@ public class Grid
             return gridObjects[x, y];
         }
         return null;
+    }
+
+    private void Shuffle<T>(List<T> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            T temp = list[i];
+            int randomIndex = Random.Range(i, list.Count);
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
+        }
     }
 }

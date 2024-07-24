@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
+using Zenject;
 
 public class Ball : MonoBehaviour
 {
     public static Vector3 s_FirstCollisionPoint { private set; get; }
-    private static int s_ReturnedBallsAmount = 0;
 
     private Rigidbody2D m_Rigidbody2D;
     private CircleCollider2D m_Collider2D;
@@ -12,7 +12,6 @@ public class Ball : MonoBehaviour
     public int m_WallCollisionDuration = 0;
 
     [SerializeField] private float m_MoveSpeed = 10;
-
     public float m_MinimumYPosition = -4.7f;
     public AudioSource audio;
 
@@ -39,42 +38,37 @@ public class Ball : MonoBehaviour
             if (s_FirstCollisionPoint == Vector3.zero)
             {
                 s_FirstCollisionPoint = transform.position;
-                BallLauncher.Instance.m_BallSprite.transform.position = s_FirstCollisionPoint;
-                BallLauncher.Instance.m_BallSprite.enabled = true;
+                var launcher = ProjectileLauncher.Instance;
+                launcher.m_BallSprite.transform.position = s_FirstCollisionPoint;
+                launcher.m_BallSprite.enabled = true;
             }
 
             DisablePhysics();
-            MoveTo(s_FirstCollisionPoint, iTween.EaseType.linear, (Vector2.Distance(transform.position, s_FirstCollisionPoint) / 5.0f), "Deactive");
+            MoveTo(s_FirstCollisionPoint, iTween.EaseType.linear, (Vector2.Distance(transform.position, s_FirstCollisionPoint) / 5.0f), "OnBallReturned");
         }
     }
 
-    private static void ContinuePlaying()
+    private void OnBallReturned()
     {
         if (s_FirstCollisionPoint != Vector3.zero)
-            BallLauncher.Instance.transform.position = s_FirstCollisionPoint;
+        {
+            var launcher = ProjectileLauncher.Instance;
+            launcher.transform.position = s_FirstCollisionPoint;
+        }
 
-        BallLauncher.Instance.m_BallSprite.enabled = true;
-        BallLauncher.Instance.ActivateHUD();
-
-        ScoreManager_ballz.Instance.UpdateScore();
-
-        BrickSpawner.Instance.MoveDownBricksRows();
-        BrickSpawner.Instance.SpawnNewBricks();
+        var projectileLauncher = ProjectileLauncher.Instance;
+        projectileLauncher.m_BallSprite.enabled = true;
+    //    ScoreManager_ballz.Instance.UpdateScore();
+        /*BrickSpawner.Instance.MoveDownBricksRows();
+        BrickSpawner.Instance.SpawnNewBricks();*/
 
         s_FirstCollisionPoint = Vector3.zero;
-        s_ReturnedBallsAmount = 0;
-
-        BallLauncher.Instance.m_CanPlay = true;
+        projectileLauncher.m_CanPlay = true;
     }
 
     public static void ResetFirstCollisionPoint()
     {
         s_FirstCollisionPoint = Vector3.zero;
-    }
-
-    public static void ResetReturningBallsAmount()
-    {
-        s_ReturnedBallsAmount = 0;
     }
 
     public void GetReadyAndAddForce(Vector2 direction)
@@ -98,31 +92,21 @@ public class Ball : MonoBehaviour
         m_Rigidbody2D.bodyType = RigidbodyType2D.Static;
     }
 
-    public void MoveTo(Vector3 position, iTween.EaseType easeType = iTween.EaseType.linear, float time = 0.1f, string onCompleteMethod = "Deactive")
+    public void MoveTo(Vector3 position, iTween.EaseType easeType = iTween.EaseType.linear, float time = 0.1f, string onCompleteMethod = "OnBallReturned")
     {
         iTween.Stop(gameObject);
 
-        if(m_SpriteRenderer.enabled)
-            iTween.MoveTo(gameObject,iTween.Hash("position",position, "easetype", easeType, "time", time,
-                "oncomplete", onCompleteMethod));
+        if (m_SpriteRenderer.enabled)
+        {
+            iTween.MoveTo(gameObject, iTween.Hash("position", position, "easetype", easeType, "time", time, "oncomplete", onCompleteMethod));
+        }
     }
 
-    private void Deactive()
-    {
-        s_ReturnedBallsAmount++;    // then check all of balls are returned to the floor
-        if (s_ReturnedBallsAmount == BallLauncher.Instance.m_BallsAmount)
-            ContinuePlaying();
-
-        m_SpriteRenderer.enabled = false;
-    }
-
-    private void DeactiveSprite()
-    {
-        m_SpriteRenderer.enabled = false;
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Block")
-         audio.Play();
+        if (collision.gameObject.tag == "Block")
+        {
+            audio.Play();
+        }
     }
 }

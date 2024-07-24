@@ -15,6 +15,7 @@
           </e>
           <e p="Scripts" t="Include">
             <e p="BallzMergeInstaller.cs" t="Include" />
+            <e p="ProjectileLauncher.cs" t="Include" />
           </e>
         </e>
         <e p="CodeMonkey" t="Include">

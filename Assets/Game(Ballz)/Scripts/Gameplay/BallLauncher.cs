@@ -142,11 +142,11 @@ public class BallLauncher : MonoBehaviour
 
         m_TempAmount = 0;
 
-        Ball.ResetReturningBallsAmount();
+       // Ball.ResetReturningBallsAmount();
 
         m_ReturnBallsButton.SetActive(false);
 
-        HideAllBalls();
+       // HideAllBalls();
     }
 
     public void ResetPositions()
@@ -237,7 +237,7 @@ public class BallLauncher : MonoBehaviour
 
         ResetPositions();
 
-        Ball.ResetReturningBallsAmount();
+        //Ball.ResetReturningBallsAmount();
 
         ScoreManager_ballz.Instance.UpdateScore();
 
