@@ -60,6 +60,7 @@ public class Grid
         CreateTextMesh(newGridObj);
 
         // Check for initial merges
+        CheckForInitialMerge(x, y);
     }
 
     private void CheckForInitialMerge(int x, int y)
@@ -111,13 +112,15 @@ public class Grid
 
         if (obj1 != null && obj2 != null && obj1.number == obj2.number)
         {
-            obj1.number += obj2.number;
-            obj2.transform.DOMove(GetWorldPosition(x1, y1), 0.5f).OnComplete(() =>
-            {
-                Object.Destroy(obj2.gameObject);
-                gridObjects[x2, y2] = null;
-                obj1.CheckForMerge(); // Check for further merges
-            });
+            // Destroy both objects
+            Object.Destroy(obj1.gameObject);
+            Object.Destroy(obj2.gameObject);
+
+            gridObjects[x1, y1] = null;
+            gridObjects[x2, y2] = null;
+
+            // After destroying, check for merges again in the grid
+            obj1.CheckForMerge(); // Only call on one object as both are destroyed
         }
     }
 

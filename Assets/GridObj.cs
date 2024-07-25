@@ -30,7 +30,7 @@ public class GridObj : MonoBehaviour
             if (targetObj == null)
             {
                 grid.MoveGridObject((int)gridPosition.x, (int)gridPosition.y, newPosition.x, newPosition.y);
-                //CheckForMerge();
+                    // CheckForMerge();
             }
             else if (targetObj.number == number)
             {
@@ -65,6 +65,7 @@ public class GridObj : MonoBehaviour
                 if (adjacentObj != null && adjacentObj.number == number)
                 {
                     grid.MergeGridObjects((int)gridPosition.x, (int)gridPosition.y, adjacentPosition.x, adjacentPosition.y);
+                    break; // Stop checking after the first merge to prevent duplicate merges in a single call
                 }
             }
         }
