@@ -21,7 +21,6 @@ public class Testing : MonoBehaviour
         // Example swap call for testing purposes
         if (Input.GetKeyDown(KeyCode.T))
         {
-            grid.DebugGridObjects();
         }
     }
 }

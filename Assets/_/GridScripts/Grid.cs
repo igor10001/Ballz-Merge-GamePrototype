@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Grid
 {
@@ -20,25 +21,6 @@ public class Grid
         this.numberOfObjects = numberOfObjects;
         this.referenceGridObject = referenceGridObject;
         InitializeGridObjects();
-    }
-
-    public void DebugGridObjects()
-    {
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                GridObj obj = GetGridObjectAt(x, y);
-                if (obj != null)
-                {
-                    Debug.Log($"GridObject at ({x}, {y}): Health = {obj.number}, Position = {obj.transform.position}");
-                }
-                else
-                {
-                    Debug.Log($"GridObject at ({x}, {y}) is null.");
-                }
-            }
-        }
     }
 
     private void InitializeGridObjects()
@@ -67,7 +49,7 @@ public class Grid
     {
         Vector3 worldPosition = GetWorldPosition(x, y);
         GridObj newGridObj = Object.Instantiate(referenceGridObject, worldPosition, Quaternion.identity);
-        newGridObj.Initialize(this, GetRandomPairNumber(), new Vector2(x, y));
+        newGridObj.Initialize(this, Random.Range(1, 5), new Vector2(x, y));
 
         gridObjects[x, y] = newGridObj;
 
@@ -76,6 +58,25 @@ public class Grid
 
         newGridObj.GetComponent<SpriteRenderer>().color = GetRandomColor();
         CreateTextMesh(newGridObj);
+
+        // Check for initial merges
+    }
+
+    private void CheckForInitialMerge(int x, int y)
+    {
+        Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
+        foreach (var direction in directions)
+        {
+            Vector2Int adjacentPosition = new Vector2Int(x + direction.x, y + direction.y);
+            if (IsPositionValid(adjacentPosition))
+            {
+                GridObj adjacentObj = GetGridObjectAt(adjacentPosition.x, adjacentPosition.y);
+                if (adjacentObj != null && adjacentObj.number == gridObjects[x, y].number)
+                {
+                    MergeGridObjects(x, y, adjacentPosition.x, adjacentPosition.y);
+                }
+            }
+        }
     }
 
     private Vector3 GetWorldPosition(int x, int y)
@@ -96,7 +97,10 @@ public class Grid
             gridObjects[x2, y2] = obj;
             gridObjects[x1, y1] = null;
             obj.gridPosition = new Vector2(x2, y2);
-            obj.transform.position = GetWorldPosition(x2, y2);
+            obj.transform.DOMove(GetWorldPosition(x2, y2), 0.5f).OnComplete(() =>
+            {
+                obj.CheckForMerge();
+            });
         }
     }
 
@@ -108,8 +112,12 @@ public class Grid
         if (obj1 != null && obj2 != null && obj1.number == obj2.number)
         {
             obj1.number += obj2.number;
-            Object.Destroy(obj2.gameObject);
-            gridObjects[x2, y2] = null;
+            obj2.transform.DOMove(GetWorldPosition(x1, y1), 0.5f).OnComplete(() =>
+            {
+                Object.Destroy(obj2.gameObject);
+                gridObjects[x2, y2] = null;
+                obj1.CheckForMerge(); // Check for further merges
+            });
         }
     }
 
@@ -151,12 +159,6 @@ public class Grid
         }
     }
 
-    private int GetRandomPairNumber()
-    {
-        int[] pairNumbers = { 2, 4, 6, 8, 10 };
-        return pairNumbers[Random.Range(0, pairNumbers.Length)];
-    }
-
     private void CreateTextMesh(GridObj gridObj)
     {
         GameObject textObj = new GameObject("Text");
@@ -164,7 +166,8 @@ public class Grid
         textObj.transform.localPosition = Vector3.zero;
         TextMesh textMesh = textObj.AddComponent<TextMesh>();
         textMesh.text = gridObj.number.ToString();
-        textMesh.fontSize = 60;
+        textMesh.fontSize = 32;
         textMesh.color = Color.black;
+        gridObj.textMesh = textMesh;
     }
 }
