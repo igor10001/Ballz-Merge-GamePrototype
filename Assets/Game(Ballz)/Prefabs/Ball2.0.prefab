@@ -269,7 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_WallCollisionDuration: 0
   m_MoveSpeed: 40
-  m_MinimumYPosition: -43
+  m_MinimumYPosition: -34
   audio: {fileID: 5065037109929455563}
 --- !u!82 &5065037109929455563
 AudioSource:

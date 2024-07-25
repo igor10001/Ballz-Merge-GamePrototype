@@ -68,6 +68,7 @@
             </e>
           </e>
         </e>
+        <e p="GridObj.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Pixelplacement" t="Include">
             <e p="iTween" t="Include">

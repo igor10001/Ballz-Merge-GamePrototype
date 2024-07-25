@@ -104,8 +104,11 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Block")
+        GridObj gridObj = collision.gameObject.GetComponent<GridObj>();
+        if (gridObj != null)
         {
+            Vector2 hitDirection = collision.contacts[0].normal; // Direction of the hit
+            gridObj.OnBallHit(hitDirection);
             audio.Play();
         }
     }
