@@ -1,5 +1,9 @@
-﻿using System.Collections;
+﻿// ProjectileLauncher.cs
+
+using System;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.Video;
 
 public class ProjectileLauncher : MonoBehaviour
 {
@@ -29,7 +33,7 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void Awake()
     {
-        // Ensure only one instance exists hin the scene
+        // Ensure only one instance exists in the scene
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -51,37 +55,59 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void Update()
     {
-        if (!m_CanPlay)
+        if (!m_CanPlay || (m_CurrentBall != null && m_CurrentBall.GetComponent<Ball>().CurrentState is BallMovingState))
             return;
+        
 
-        if (Time.timeScale != 0)
-        {
-            Vector3 mousePosition = Input.mousePosition;
-            if (mousePosition.x < 0 || mousePosition.x > Screen.width ||
-                mousePosition.y < 0 || mousePosition.y > Screen.height)
-            {
-                return;
-            }
-            m_WorldPosition = Camera.main.ScreenToWorldPoint(mousePosition + Vector3.back * 10);
-        };
-
-        if (Input.GetMouseButtonDown(0))
-            StartDrag(m_WorldPosition);
-        else if (Input.GetMouseButton(0))
-            ContinueDrag(m_WorldPosition);
-        else if (Input.GetMouseButtonUp(0))
-            EndDrag();
+        HandleInput();
     }
 
-    private void StartDrag(Vector3 worldPosition)
+    private void HandleInput()
     {
-        m_StartPosition = worldPosition;
+        if (Input.touchCount > 0) // Check if there's at least one touch
+        {
+            Touch touch = Input.GetTouch(0); // Get the first touch
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    m_StartPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
+                    break;
+                case TouchPhase.Moved:
+                    Vector3 tempEndPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
+                    ContinueDrag(tempEndPosition);
+                    break;
+                case TouchPhase.Ended:
+                    Vector3 endPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
+                    EndDrag(endPosition);
+                    break;
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector3 mousePosition = Input.mousePosition;
+                m_StartPosition = Camera.main.ScreenToWorldPoint(mousePosition + Vector3.back * 10);
+            }
+            else if (Input.GetMouseButton(0))
+            {
+                Vector3 mousePosition = Input.mousePosition;
+                Vector3 tempEndPosition = Camera.main.ScreenToWorldPoint(mousePosition + Vector3.back * 10);
+                ContinueDrag(tempEndPosition);
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                Vector3 mousePosition = Input.mousePosition;
+                Vector3 endPosition = Camera.main.ScreenToWorldPoint(mousePosition + Vector3.back * 10);
+                EndDrag(endPosition);
+            }
+        }
     }
-    
+
     private void ContinueDrag(Vector3 worldPosition)
     {
-        Vector3 tempEndposition = worldPosition;
-        Vector3 tempDirection = tempEndposition - m_StartPosition;
+        Vector3 tempDirection = worldPosition - m_StartPosition;
         tempDirection.Normalize();
 
         if (Mathf.Abs(Mathf.Atan2(tempDirection.x, tempDirection.y)) < 1.35f)
@@ -99,12 +125,12 @@ public class ProjectileLauncher : MonoBehaviour
         m_LineRenderer.SetPosition(1, m_EndPosition - m_StartPosition);
     }
 
-    private void EndDrag()
+    private void EndDrag(Vector3 endPosition)
     {
-        if (m_StartPosition == m_EndPosition)
+        if (m_StartPosition == endPosition)
             return;
 
-        m_Direction = m_EndPosition - m_StartPosition;
+        m_Direction = endPosition - m_StartPosition;
         m_Direction.Normalize();
 
         m_LineRenderer.SetPosition(1, Vector3.zero);
@@ -129,14 +155,11 @@ public class ProjectileLauncher : MonoBehaviour
         }
 
         m_CurrentBall = Instantiate(m_BallPrefab, transform.position, Quaternion.identity);
-       // m_CurrentBall.gameObject.SetActive(false);
         m_CurrentBall.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
     }
 
     private IEnumerator StartShootingBall()
     {
-        //m_BallSprite.enabled = false;
-        
         m_CurrentBall.transform.position = transform.position;
         m_CurrentBall.gameObject.SetActive(true);
         m_CurrentBall.GetReadyAndAddForce(m_Direction);

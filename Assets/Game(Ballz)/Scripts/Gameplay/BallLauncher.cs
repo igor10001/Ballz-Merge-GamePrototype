@@ -37,7 +37,7 @@ public class BallLauncher : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private GameObject m_ReturnBallsButton;
 
-    private void Awake()
+    /*private void Awake()
     {
         Instance = this;
         m_CanPlay = true;
@@ -72,7 +72,7 @@ public class BallLauncher : MonoBehaviour
             ContinueDrag(m_WorldPosition);
         else if (Input.GetMouseButtonUp(0))
             EndDrag();
-    }
+    }*/
 
     private void StartDrag(Vector3 worldPosition)
     {
@@ -105,7 +105,7 @@ public class BallLauncher : MonoBehaviour
         m_LineRenderer.SetPosition(1, m_EndPosition - m_StartPosition);
     }
 
-    private void EndDrag()
+    /*private void EndDrag()
     {
         if (m_StartPosition == m_EndPosition)
             return;
@@ -123,7 +123,7 @@ public class BallLauncher : MonoBehaviour
             m_CanPlay = false;
             StartCoroutine(StartShootingBalls());
         }
-    }
+    }*/
 
     public void OnMainMenuActions()
     {
@@ -156,7 +156,7 @@ public class BallLauncher : MonoBehaviour
         m_WorldPosition = Vector3.zero;
     }
 
-    private void HideAllBalls()
+    /*private void HideAllBalls()
     {
         for (int i = 0; i < m_Balls.Count; i++)
         {
@@ -174,7 +174,7 @@ public class BallLauncher : MonoBehaviour
             m_Balls[m_Balls.Count - 1].transform.localScale = transform.localScale;
             m_Balls[m_Balls.Count - 1].Disable();
         }
-    }
+    }*/
 
     IEnumerator StartShootingBalls()
     {

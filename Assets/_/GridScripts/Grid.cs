@@ -166,11 +166,34 @@ public class Grid
     {
         GameObject textObj = new GameObject("Text");
         textObj.transform.SetParent(gridObj.transform);
-        textObj.transform.localPosition = Vector3.zero;
+        textObj.transform.localPosition = Vector3.zero; // This will position the textObj at the center of gridObj
+
         TextMesh textMesh = textObj.AddComponent<TextMesh>();
         textMesh.text = gridObj.number.ToString();
         textMesh.fontSize = 32;
         textMesh.color = Color.black;
-        gridObj.textMesh = textMesh;
+
+        // Center the text
+        textMesh.alignment = TextAlignment.Center;
+        textMesh.anchor = TextAnchor.MiddleCenter;
+
+        // Optionally adjust the position to ensure text is visually centered
+        Bounds textBounds = textMesh.GetComponent<Renderer>().bounds;
+        Vector3 offset = new Vector3(-textBounds.extents.x, -textBounds.extents.y, 0);
+        textObj.transform.localPosition = offset;
+        textObj.transform.localPosition = Vector3.zero; 
+
+        // Store a reference to the TextMesh in GridObj if needed
     }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }

@@ -14,7 +14,11 @@
             <e p="Testing.cs" t="Include" />
           </e>
           <e p="Scripts" t="Include">
+            <e p="BallDestruct.cs" t="Include" />
+            <e p="BallMovingState.cs" t="Include" />
+            <e p="BallStaticState.cs" t="Include" />
             <e p="BallzMergeInstaller.cs" t="Include" />
+            <e p="IBallState.cs" t="Include" />
             <e p="ProjectileLauncher.cs" t="Include" />
           </e>
         </e>

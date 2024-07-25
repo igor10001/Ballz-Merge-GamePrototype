@@ -19,7 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6051722d-0e54-49dd-9451-1327d38ad6c5" name="Default Changelist" comment="" />
+    <list default="true" id="6051722d-0e54-49dd-9451-1327d38ad6c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/BallDestruct.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/BallDestruct.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/BallMovingState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/BallMovingState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/BallStaticState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/BallStaticState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/IBallState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/IBallState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/Ball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BallLauncher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BallLauncher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Prefabs/Block.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Prefabs/Block.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +44,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7A9A3B57-78C3-47B6-839D-F652EBDC3172/6d/2fbacf0a/EventDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GridObj.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -37,14 +53,19 @@
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/BlockSetup.cs" />
         <option value="$PROJECT_DIR$/Assets/_/GridScripts/GridObjecrt.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BallLauncher.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/BallzMergeInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" />
         <option value="$PROJECT_DIR$/Assets/_/GridScripts/GridObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/Ball.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/GridScripts/Testing.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/IBallState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/BallMovingState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BallLauncher.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/IBallObserver.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/BallDestruct.cs" />
         <option value="$PROJECT_DIR$/Assets/GridObj.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/BallStaticState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/Ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/GridScripts/Testing.cs" />
       </list>
     </option>
   </component>
@@ -122,82 +143,105 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="41" key="GridCell.Tab.0.bottom" timestamp="1721870862442">
+    <state width="1237" height="41" key="GridCell.Tab.0.bottom" timestamp="1721884452431">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.0.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862441" />
-    <state width="1237" height="41" key="GridCell.Tab.0.center" timestamp="1721870862441">
+    <state width="1237" height="41" key="GridCell.Tab.0.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452431" />
+    <state width="1237" height="41" key="GridCell.Tab.0.center" timestamp="1721884452431">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.0.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862441" />
-    <state width="1237" height="41" key="GridCell.Tab.0.left" timestamp="1721870862439">
+    <state width="1237" height="41" key="GridCell.Tab.0.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452431" />
+    <state width="1237" height="41" key="GridCell.Tab.0.left" timestamp="1721884452431">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.0.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862439" />
-    <state width="1237" height="41" key="GridCell.Tab.0.right" timestamp="1721870862441">
+    <state width="1237" height="41" key="GridCell.Tab.0.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452431" />
+    <state width="1237" height="41" key="GridCell.Tab.0.right" timestamp="1721884452431">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.0.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862441" />
-    <state width="1237" height="41" key="GridCell.Tab.1.bottom" timestamp="1721870862444">
+    <state width="1237" height="41" key="GridCell.Tab.0.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452431" />
+    <state width="1237" height="41" key="GridCell.Tab.1.bottom" timestamp="1721884478571">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.1.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862444" />
-    <state width="1237" height="41" key="GridCell.Tab.1.center" timestamp="1721870862443">
+    <state width="1237" height="41" key="GridCell.Tab.1.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884478571" />
+    <state width="1237" height="41" key="GridCell.Tab.1.center" timestamp="1721884478570">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.1.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862443" />
-    <state width="1237" height="41" key="GridCell.Tab.1.left" timestamp="1721870862442">
+    <state width="1237" height="41" key="GridCell.Tab.1.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884478570" />
+    <state width="1237" height="41" key="GridCell.Tab.1.left" timestamp="1721884478570">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.1.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862442" />
-    <state width="1237" height="41" key="GridCell.Tab.1.right" timestamp="1721870862443">
+    <state width="1237" height="41" key="GridCell.Tab.1.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884478570" />
+    <state width="1237" height="41" key="GridCell.Tab.1.right" timestamp="1721884478571">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.1.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862443" />
-    <state width="1237" height="41" key="GridCell.Tab.2.bottom" timestamp="1721870862444">
+    <state width="1237" height="41" key="GridCell.Tab.1.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884478571" />
+    <state width="1237" height="41" key="GridCell.Tab.2.bottom" timestamp="1721884452271">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.2.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862444" />
-    <state width="1237" height="41" key="GridCell.Tab.2.center" timestamp="1721870862444">
+    <state width="1237" height="41" key="GridCell.Tab.2.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452271" />
+    <state width="1237" height="41" key="GridCell.Tab.2.center" timestamp="1721884452271">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.2.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862444" />
-    <state width="1237" height="41" key="GridCell.Tab.2.left" timestamp="1721870862444">
+    <state width="1237" height="41" key="GridCell.Tab.2.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452271" />
+    <state width="1237" height="41" key="GridCell.Tab.2.left" timestamp="1721884452270">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.2.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862444" />
-    <state width="1237" height="41" key="GridCell.Tab.2.right" timestamp="1721870862444">
+    <state width="1237" height="41" key="GridCell.Tab.2.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452270" />
+    <state width="1237" height="41" key="GridCell.Tab.2.right" timestamp="1721884452271">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.2.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862444" />
-    <state width="1237" height="41" key="GridCell.Tab.3.bottom" timestamp="1721870862446">
+    <state width="1237" height="41" key="GridCell.Tab.2.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452271" />
+    <state width="1237" height="41" key="GridCell.Tab.3.bottom" timestamp="1721884452271">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.3.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862446" />
-    <state width="1237" height="41" key="GridCell.Tab.3.center" timestamp="1721870862445">
+    <state width="1237" height="41" key="GridCell.Tab.3.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452271" />
+    <state width="1237" height="41" key="GridCell.Tab.3.center" timestamp="1721884452271">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.3.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862445" />
-    <state width="1237" height="41" key="GridCell.Tab.3.left" timestamp="1721870862445">
+    <state width="1237" height="41" key="GridCell.Tab.3.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452271" />
+    <state width="1237" height="41" key="GridCell.Tab.3.left" timestamp="1721884452271">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.3.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862445" />
-    <state width="1237" height="41" key="GridCell.Tab.3.right" timestamp="1721870862446">
+    <state width="1237" height="41" key="GridCell.Tab.3.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452271" />
+    <state width="1237" height="41" key="GridCell.Tab.3.right" timestamp="1721884452271">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state width="1237" height="41" key="GridCell.Tab.3.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721870862446" />
+    <state width="1237" height="41" key="GridCell.Tab.3.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721884452271" />
+    <state x="2327" y="267" key="RiderGenerateDialog" timestamp="1721880969024">
+      <screen x="1920" y="51" width="1280" height="974" />
+    </state>
+    <state x="2327" y="267" key="RiderGenerateDialog/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721880969024" />
     <state x="2061" y="188" key="SettingsEditor" timestamp="1721857176968">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state x="2061" y="188" key="SettingsEditor/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721857176968" />
-    <state x="1998" y="161" width="1125" height="755" key="VCS.FileHistoryDialog" timestamp="1721876571181">
+    <state x="1998" y="161" width="1125" height="755" key="VCS.FileHistoryDialog" timestamp="1721885472956">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/1920.51.1280.974/0.0.1536.824@0.0.1536.824" timestamp="1721816494067" />
-    <state x="1998" y="161" width="1125" height="755" key="VCS.FileHistoryDialog/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721876571181" />
+    <state x="1998" y="161" width="1125" height="755" key="VCS.FileHistoryDialog/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721885472956" />
     <state x="2216" y="252" key="run.anything.popup" timestamp="1721851369082">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state x="2216" y="252" key="run.anything.popup/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1721851369082" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_/Scripts/BallDestruct.cs</url>
+          <line>12</line>
+          <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\BallDestruct.cs" initialLine="12">
+            <startOffsets>
+              <option value="319" />
+            </startOffsets>
+            <endOffsets>
+              <option value="354" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
