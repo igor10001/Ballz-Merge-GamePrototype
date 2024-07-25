@@ -67,7 +67,7 @@ public class Grid
     {
         Vector3 worldPosition = GetWorldPosition(x, y);
         GridObj newGridObj = Object.Instantiate(referenceGridObject, worldPosition, Quaternion.identity);
-        newGridObj.Initialize(this, Random.Range(1, 5), new Vector2(x, y));
+        newGridObj.Initialize(this, GetRandomPairNumber(), new Vector2(x, y));
 
         gridObjects[x, y] = newGridObj;
 
@@ -75,6 +75,7 @@ public class Grid
                                                       cellSize.y / newGridObj.GetComponent<Renderer>().bounds.size.y, 1);
 
         newGridObj.GetComponent<SpriteRenderer>().color = GetRandomColor();
+        CreateTextMesh(newGridObj);
     }
 
     private Vector3 GetWorldPosition(int x, int y)
@@ -148,5 +149,22 @@ public class Grid
                 gridObjects[x, y] = null;
             }
         }
+    }
+
+    private int GetRandomPairNumber()
+    {
+        int[] pairNumbers = { 2, 4, 6, 8, 10 };
+        return pairNumbers[Random.Range(0, pairNumbers.Length)];
+    }
+
+    private void CreateTextMesh(GridObj gridObj)
+    {
+        GameObject textObj = new GameObject("Text");
+        textObj.transform.SetParent(gridObj.transform);
+        textObj.transform.localPosition = Vector3.zero;
+        TextMesh textMesh = textObj.AddComponent<TextMesh>();
+        textMesh.text = gridObj.number.ToString();
+        textMesh.fontSize = 60;
+        textMesh.color = Color.black;
     }
 }

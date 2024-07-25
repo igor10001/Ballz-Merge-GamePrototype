@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class GridObj : MonoBehaviour
 {
     public int number;
     public Vector2 gridPosition;
-    public TextMeshProUGUI text;
 
     private Grid grid;
 
@@ -32,13 +30,15 @@ public class GridObj : MonoBehaviour
             }
             else if (targetObj.number == number)
             {
-                grid.MergeGridObjects((int)gridPosition.x, (int)gridPosition.y, newPosition.x, newPosition.y);
+               // grid.MergeGridObjects((int)gridPosition.x, (int)gridPosition.y, newPosition.x, newPosition.y);
             }
         }
     }
 
     public void OnBallHit(Vector2 hitDirection)
     {
-        Move(hitDirection);
+        Move(-hitDirection);
     }
+
+   
 }
