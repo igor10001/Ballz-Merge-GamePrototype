@@ -161,6 +161,18 @@ public class Grid
             }
         }
     }
+    public void DebugGridCells()
+    {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                GridObj gridObj = gridObjects[x, y];
+                string status = gridObj == null ? "null" : "occupied";
+                Debug.Log($"Cell ({x}, {y}): {status}");
+            }
+        }
+    }
 
     private void CreateTextMesh(GridObj gridObj)
     {
@@ -184,6 +196,36 @@ public class Grid
         textObj.transform.localPosition = Vector3.zero; 
 
         // Store a reference to the TextMesh in GridObj if needed
+    }
+    public void DeleteRow(int row)
+    {
+        if (row < 0 || row >= height)
+        {
+            Debug.LogError("Row index is out of bounds.");
+            return;
+        }
+
+        // Remove all grid objects in the specified row
+        for (int x = 0; x < width; x++)
+        {
+            RemoveGridObject(x, row);
+        }
+
+        // Move all rows above down by one
+        for (int y = row + 1; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                GridObj obj = gridObjects[x, y];
+                if (obj != null)
+                {
+                    gridObjects[x, y - 1] = obj;
+                    gridObjects[x, y] = null;
+                    obj.gridPosition = new Vector2(x, y - 1);
+                    obj.transform.DOMove(GetWorldPosition(x, y - 1), 0.5f);
+                }
+            }
+        }
     }
 
   

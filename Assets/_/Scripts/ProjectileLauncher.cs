@@ -12,7 +12,7 @@ public class ProjectileLauncher : MonoBehaviour
     private Vector3 m_StartPosition;
     private Vector3 m_EndPosition;
     private Vector3 m_WorldPosition;
-
+    public event EventHandler OnBallSpawn;
     private Vector3 m_Direction;
 
     private LineRenderer m_LineRenderer;
@@ -29,7 +29,7 @@ public class ProjectileLauncher : MonoBehaviour
 
     [Header("Ball")]
     public Ball m_BallPrefab;
-    private Ball m_CurrentBall;
+    public Ball m_CurrentBall;
 
     private void Awake()
     {
@@ -156,6 +156,7 @@ public class ProjectileLauncher : MonoBehaviour
 
         m_CurrentBall = Instantiate(m_BallPrefab, transform.position, Quaternion.identity);
         m_CurrentBall.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+        OnBallSpawn?.Invoke(this, EventArgs.Empty);
     }
 
     private IEnumerator StartShootingBall()

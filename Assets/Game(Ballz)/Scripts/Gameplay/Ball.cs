@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using System;
 
 public class Ball : MonoBehaviour
 {
+    public event EventHandler OnMoveBlockLine;
     public static Vector3 s_FirstCollisionPoint { private set; get; }
 
     private Rigidbody2D m_Rigidbody2D;
@@ -14,7 +16,6 @@ public class Ball : MonoBehaviour
     public AudioSource audio;
 
     private IBallState _currentState;
-    private bool _hasMovedObjectsDown = true; // Flag to track if MoveAllObjectsDown has been called
 
     public IBallState CurrentState => _currentState;
 
@@ -50,13 +51,7 @@ public class Ball : MonoBehaviour
                 launcher.m_BallSprite.enabled = true;
             }
 
-            // Call MoveAllObjectsDown only once per cycle
-            if (!_hasMovedObjectsDown)
-            {
-                //Testing.Instance.Grid.MoveAllObjectsDown();
-                _hasMovedObjectsDown = true; // Set the flag to indicate the action has been performed
-            }
-
+          
             ChangeState(new BallStaticState()); // Change state to static
             MoveTo(s_FirstCollisionPoint, iTween.EaseType.linear, (Vector2.Distance(transform.position, s_FirstCollisionPoint) / 5.0f), "OnBallReturned");
         }
@@ -66,11 +61,7 @@ public class Ball : MonoBehaviour
     {
         _currentState = newState;
 
-        // Reset the flag when the state changes
-        if (newState is BallStaticState)
-        {
-            _hasMovedObjectsDown = false; // Allow MoveAllObjectsDown to be called again
-        }
+      
     }
 
     private void OnBallReturned()
@@ -86,7 +77,8 @@ public class Ball : MonoBehaviour
 
         s_FirstCollisionPoint = Vector3.zero;
         projectileLauncher.m_CanPlay = true;
-        ChangeState(new BallStaticState()); // Ensure the ball is in static state
+        ChangeState(new BallStaticState()); 
+        OnMoveBlockLine?.Invoke(this, EventArgs.Empty);
     }
 
     public static void ResetFirstCollisionPoint()

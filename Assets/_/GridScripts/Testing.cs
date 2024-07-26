@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Testing : MonoBehaviour
 {
@@ -12,15 +13,19 @@ public class Testing : MonoBehaviour
 
     void Start()
     {
-        // Create a Grid with specified dimensions, cell size, spacing, and number of objects
+       
+        ProjectileLauncher.Instance.OnBallSpawn += HandleOnBallSpawn;
         grid = new Grid(width, height, cellSize, spacing, referenceGridObject, 10);
     }
-
-    private void Update()
+    private void HandleOnMoveBlockLine(object sender, EventArgs e)
     {
-        // Example swap call for testing purposes
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-        }
+        grid.DeleteRow(0);
     }
+    private void HandleOnBallSpawn( object sender, EventArgs e)
+    {
+        ProjectileLauncher.Instance.m_CurrentBall.OnMoveBlockLine += HandleOnMoveBlockLine;
+    }
+   
+
+    
 }
