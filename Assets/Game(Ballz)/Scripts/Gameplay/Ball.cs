@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System;
 using DG.Tweening;
-using Zenject; // Import DOTween's namespace
+using Zenject;
 
 public class Ball : MonoBehaviour
 {
-    public event EventHandler OnMoveBlockLine;
     public static Vector3 s_FirstCollisionPoint { private set; get; }
 
     private Rigidbody2D m_Rigidbody2D;
@@ -20,12 +19,17 @@ public class Ball : MonoBehaviour
 
     public IBallState CurrentState => _currentState;
     private ProjectileLauncher _projectileLauncher;
-    
+    private IEventAggregator _eventAggregator;
+
+    public event EventHandler OnMoveBlockLine;
+
     [Inject]
-    public void Construct(ProjectileLauncher projectileLauncher)
+    public void Construct(ProjectileLauncher projectileLauncher, IEventAggregator eventAggregator)
     {
-        _projectileLauncher = projectileLauncher; // Inject ProjectileLauncher
+        _projectileLauncher = projectileLauncher;
+        _eventAggregator = eventAggregator;
     }
+
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -34,7 +38,7 @@ public class Ball : MonoBehaviour
         m_Collider2D = GetComponent<CircleCollider2D>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
 
-        _currentState = new BallStaticState(); 
+        _currentState = new BallStaticState();
     }
 
     private void Update()
@@ -55,7 +59,7 @@ public class Ball : MonoBehaviour
                 s_FirstCollisionPoint = transform.position;
             }
 
-            ChangeState(new BallStaticState()); 
+            ChangeState(new BallStaticState());
             MoveTo(s_FirstCollisionPoint, 0.1f, OnBallReturnedMethod);
         }
     }
@@ -70,13 +74,13 @@ public class Ball : MonoBehaviour
         if (s_FirstCollisionPoint != Vector3.zero)
         {
             var launcher = _projectileLauncher;
-            
-                launcher.transform.position = s_FirstCollisionPoint;
+            launcher.transform.position = s_FirstCollisionPoint;
         }
 
-
         s_FirstCollisionPoint = Vector3.zero;
-        ChangeState(new BallStaticState()); 
+        ChangeState(new BallStaticState());
+
+        // Ensure the event is only invoked once
         OnMoveBlockLine?.Invoke(this, EventArgs.Empty);
     }
 
@@ -93,7 +97,7 @@ public class Ball : MonoBehaviour
         m_Rigidbody2D.AddForce(direction);
         ChangeState(new BallMovingState());
     }
-  
+
     public void EnablePhysics()
     {
         m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
@@ -110,21 +114,12 @@ public class Ball : MonoBehaviour
     {
         if (gameObject == null || transform == null)
         {
-            Debug.LogWarning("GameObject or Transform is null.");
+            Debug.LogWarning("The ball object or its transform is null. Returning from MoveTo.");
             return;
         }
-        DOTween.Kill(gameObject); 
 
-        if (m_SpriteRenderer.enabled)
-        {
-            transform.DOMove(position, duration).OnComplete(() =>
-            {
-                
-                Invoke(onCompleteMethod, 0f);
-            });
-        }
+        transform.DOLocalMove(position, duration).OnComplete(() => Invoke(onCompleteMethod, 0.1f));
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GridObj gridObj = collision.gameObject.GetComponent<GridObj>();

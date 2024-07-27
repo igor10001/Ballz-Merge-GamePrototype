@@ -1,7 +1,7 @@
-﻿using System;
+﻿using System.Collections;
 using UnityEngine;
-using System.Collections;
 using Zenject;
+using System;
 
 public class ProjectileLauncher : MonoBehaviour
 {
@@ -24,13 +24,14 @@ public class ProjectileLauncher : MonoBehaviour
     public Ball m_BallPrefab;
     public Ball m_CurrentBall;
 
-    // Inject DiContainer
     private DiContainer _container;
+    private IEventAggregator _eventAggregator;
 
     [Inject]
-    public void Construct(DiContainer container)
+    public void Construct(DiContainer container, IEventAggregator eventAggregator)
     {
         _container = container;
+        _eventAggregator = eventAggregator;
     }
 
     private void Awake()
@@ -113,15 +114,13 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void SpawnNewBall()
     {
-      
-
-        if(m_CurrentBall == null)
+        if (m_CurrentBall == null)
             m_CurrentBall = _container.InstantiatePrefabForComponent<Ball>(m_BallPrefab.gameObject, transform.position, Quaternion.identity, null);
-    
+
         if (m_CurrentBall != null)
         {
             m_CurrentBall.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
-            OnBallSpawn?.Invoke(this, EventArgs.Empty);
+            _eventAggregator.Publish(new BallSpawnedEvent { Ball = m_CurrentBall });
         }
         else
         {
