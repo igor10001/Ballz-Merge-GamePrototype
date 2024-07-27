@@ -229,11 +229,13 @@ public class BallLauncher : MonoBehaviour
         m_BallSprite.transform.position = transform.position;
         m_BallSprite.enabled = true;
 
+        /*
         for (int i = 0; i < m_Balls.Count; i++)
         {
             m_Balls[i].DisablePhysics();
             m_Balls[i].MoveTo(transform.position, iTween.EaseType.easeInOutQuart, (Vector2.Distance(transform.position, m_Balls[i].transform.position) / 6.0f), "DeactiveSprite");
         }
+        */
 
         ResetPositions();
 

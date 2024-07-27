@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System;
+using DG.Tweening;
+using Zenject; // Import DOTween's namespace
 
 public class Ball : MonoBehaviour
 {
@@ -13,12 +15,17 @@ public class Ball : MonoBehaviour
     public int m_WallCollisionDuration = 0;
     [SerializeField] private float m_MoveSpeed = 20;
     public float m_MinimumYPosition = -4.7f;
-    public AudioSource audio;
-
+    private const string OnBallReturnedMethod = "OnBallReturned";
     private IBallState _currentState;
 
     public IBallState CurrentState => _currentState;
-
+    private ProjectileLauncher _projectileLauncher;
+    
+    [Inject]
+    public void Construct(ProjectileLauncher projectileLauncher)
+    {
+        _projectileLauncher = projectileLauncher; // Inject ProjectileLauncher
+    }
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -27,7 +34,7 @@ public class Ball : MonoBehaviour
         m_Collider2D = GetComponent<CircleCollider2D>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
 
-        _currentState = new BallStaticState(); // Default state
+        _currentState = new BallStaticState(); 
     }
 
     private void Update()
@@ -46,37 +53,29 @@ public class Ball : MonoBehaviour
             if (s_FirstCollisionPoint == Vector3.zero)
             {
                 s_FirstCollisionPoint = transform.position;
-                var launcher = ProjectileLauncher.Instance;
-                launcher.m_BallSprite.transform.position = s_FirstCollisionPoint;
-                launcher.m_BallSprite.enabled = true;
             }
 
-          
-            ChangeState(new BallStaticState()); // Change state to static
-            MoveTo(s_FirstCollisionPoint, iTween.EaseType.linear, (Vector2.Distance(transform.position, s_FirstCollisionPoint) / 5.0f), "OnBallReturned");
+            ChangeState(new BallStaticState()); 
+            MoveTo(s_FirstCollisionPoint, 0.1f, OnBallReturnedMethod);
         }
     }
 
     public void ChangeState(IBallState newState)
     {
         _currentState = newState;
-
-      
     }
 
     private void OnBallReturned()
     {
         if (s_FirstCollisionPoint != Vector3.zero)
         {
-            var launcher = ProjectileLauncher.Instance;
-            launcher.transform.position = s_FirstCollisionPoint;
+            var launcher = _projectileLauncher;
+            
+                launcher.transform.position = s_FirstCollisionPoint;
         }
 
-        var projectileLauncher = ProjectileLauncher.Instance;
-        projectileLauncher.m_BallSprite.enabled = true;
 
         s_FirstCollisionPoint = Vector3.zero;
-        projectileLauncher.m_CanPlay = true;
         ChangeState(new BallStaticState()); 
         OnMoveBlockLine?.Invoke(this, EventArgs.Empty);
     }
@@ -92,9 +91,9 @@ public class Ball : MonoBehaviour
         m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         m_Collider2D.enabled = true;
         m_Rigidbody2D.AddForce(direction);
-        ChangeState(new BallMovingState()); // Change state to moving
+        ChangeState(new BallMovingState());
     }
-
+  
     public void EnablePhysics()
     {
         m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
@@ -107,13 +106,22 @@ public class Ball : MonoBehaviour
         m_Rigidbody2D.bodyType = RigidbodyType2D.Static;
     }
 
-    public void MoveTo(Vector3 position, iTween.EaseType easeType = iTween.EaseType.linear, float time = 0.1f, string onCompleteMethod = "OnBallReturned")
+    public void MoveTo(Vector3 position, float duration = 0.1f, string onCompleteMethod = OnBallReturnedMethod)
     {
-        iTween.Stop(gameObject);
+        if (gameObject == null || transform == null)
+        {
+            Debug.LogWarning("GameObject or Transform is null.");
+            return;
+        }
+        DOTween.Kill(gameObject); 
 
         if (m_SpriteRenderer.enabled)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("position", position, "easetype", easeType, "time", time, "oncomplete", onCompleteMethod));
+            transform.DOMove(position, duration).OnComplete(() =>
+            {
+                
+                Invoke(onCompleteMethod, 0f);
+            });
         }
     }
 
@@ -124,7 +132,6 @@ public class Ball : MonoBehaviour
         {
             Vector2 hitDirection = collision.contacts[0].normal; // Direction of the hit
             gridObj.OnBallHit(hitDirection);
-            audio.Play();
         }
     }
 }

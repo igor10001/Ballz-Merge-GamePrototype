@@ -59,10 +59,10 @@ public class Grid
         newGridObj.GetComponent<SpriteRenderer>().color = GetRandomColor();
         CreateTextMesh(newGridObj);
 
-        // Check for initial merges
-        CheckForInitialMerge(x, y);
+        //CheckForInitialMerge(x, y);
     }
 
+    /*
     private void CheckForInitialMerge(int x, int y)
     {
         Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
@@ -72,13 +72,14 @@ public class Grid
             if (IsPositionValid(adjacentPosition))
             {
                 GridObj adjacentObj = GetGridObjectAt(adjacentPosition.x, adjacentPosition.y);
-                if (adjacentObj != null && adjacentObj.number == gridObjects[x, y].number)
+                if (adjacentObj != null && adjacentObj.Number == gridObjects[x, y].Number)
                 {
                     MergeGridObjects(x, y, adjacentPosition.x, adjacentPosition.y);
                 }
             }
         }
     }
+    */
 
     private Vector3 GetWorldPosition(int x, int y)
     {
@@ -97,7 +98,7 @@ public class Grid
         {
             gridObjects[x2, y2] = obj;
             gridObjects[x1, y1] = null;
-            obj.gridPosition = new Vector2(x2, y2);
+            obj.GridPosition = new Vector2(x2, y2);
             obj.transform.DOMove(GetWorldPosition(x2, y2), 0.5f).OnComplete(() =>
             {
                 obj.CheckForMerge();
@@ -110,17 +111,15 @@ public class Grid
         GridObj obj1 = GetGridObjectAt(x1, y1);
         GridObj obj2 = GetGridObjectAt(x2, y2);
 
-        if (obj1 != null && obj2 != null && obj1.number == obj2.number)
+        if (obj1 != null && obj2 != null && obj1.Number == obj2.Number)
         {
-            // Destroy both objects
             Object.Destroy(obj1.gameObject);
             Object.Destroy(obj2.gameObject);
 
             gridObjects[x1, y1] = null;
             gridObjects[x2, y2] = null;
 
-            // After destroying, check for merges again in the grid
-            obj1.CheckForMerge(); // Only call on one object as both are destroyed
+            obj1.CheckForMerge(); 
         }
     }
 
@@ -178,24 +177,21 @@ public class Grid
     {
         GameObject textObj = new GameObject("Text");
         textObj.transform.SetParent(gridObj.transform);
-        textObj.transform.localPosition = Vector3.zero; // This will position the textObj at the center of gridObj
+        textObj.transform.localPosition = Vector3.zero; 
 
         TextMesh textMesh = textObj.AddComponent<TextMesh>();
-        textMesh.text = gridObj.number.ToString();
+        textMesh.text = gridObj.Number.ToString();
         textMesh.fontSize = 32;
         textMesh.color = Color.black;
 
-        // Center the text
         textMesh.alignment = TextAlignment.Center;
         textMesh.anchor = TextAnchor.MiddleCenter;
 
-        // Optionally adjust the position to ensure text is visually centered
         Bounds textBounds = textMesh.GetComponent<Renderer>().bounds;
         Vector3 offset = new Vector3(-textBounds.extents.x, -textBounds.extents.y, 0);
         textObj.transform.localPosition = offset;
         textObj.transform.localPosition = Vector3.zero; 
 
-        // Store a reference to the TextMesh in GridObj if needed
     }
     public void DeleteRow(int row)
     {
@@ -205,13 +201,11 @@ public class Grid
             return;
         }
 
-        // Remove all grid objects in the specified row
         for (int x = 0; x < width; x++)
         {
             RemoveGridObject(x, row);
         }
 
-        // Move all rows above down by one
         for (int y = row + 1; y < height; y++)
         {
             for (int x = 0; x < width; x++)
@@ -221,7 +215,7 @@ public class Grid
                 {
                     gridObjects[x, y - 1] = obj;
                     gridObjects[x, y] = null;
-                    obj.gridPosition = new Vector2(x, y - 1);
+                    obj.GridPosition = new Vector2(x, y - 1);
                     obj.transform.DOMove(GetWorldPosition(x, y - 1), 0.5f);
                 }
             }

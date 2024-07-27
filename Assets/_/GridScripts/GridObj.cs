@@ -5,10 +5,22 @@ using DG.Tweening;
 
 public class GridObj : MonoBehaviour
 {
-    public int number;
-    public Vector2 gridPosition;
-    public TextMesh textMesh;
+    private int number;
 
+    private Vector2 gridPosition;
+
+    public int Number
+    {
+        get { return number; }
+        set { number = value; }
+    }
+
+    public Vector2 GridPosition
+    {
+        get { return gridPosition; }
+        set { gridPosition = value; }
+
+    }
     private Grid grid;
 
     public void Initialize(Grid grid, int number, Vector2 gridPosition)
@@ -16,7 +28,6 @@ public class GridObj : MonoBehaviour
         this.grid = grid;
         this.number = number;
         this.gridPosition = gridPosition;
-        UpdateText();
     }
 
     public void Move(Vector2 direction)
@@ -30,7 +41,6 @@ public class GridObj : MonoBehaviour
             if (targetObj == null)
             {
                 grid.MoveGridObject((int)gridPosition.x, (int)gridPosition.y, newPosition.x, newPosition.y);
-                    // CheckForMerge();
             }
             else if (targetObj.number == number)
             {
@@ -44,17 +54,10 @@ public class GridObj : MonoBehaviour
         Move(-hitDirection);
     }
 
-    private void UpdateText()
-    {
-        if (textMesh != null)
-        {
-            textMesh.text = number.ToString();
-        }
-    }
+  
 
     public void CheckForMerge()
     {
-        // Check adjacent cells for merging
         Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
         foreach (var direction in directions)
         {
@@ -65,7 +68,7 @@ public class GridObj : MonoBehaviour
                 if (adjacentObj != null && adjacentObj.number == number)
                 {
                     grid.MergeGridObjects((int)gridPosition.x, (int)gridPosition.y, adjacentPosition.x, adjacentPosition.y);
-                    break; // Stop checking after the first merge to prevent duplicate merges in a single call
+                    break; 
                 }
             }
         }

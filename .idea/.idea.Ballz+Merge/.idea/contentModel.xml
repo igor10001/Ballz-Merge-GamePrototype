@@ -10,15 +10,17 @@
         <e p="_" t="Include">
           <e p="GridScripts" t="Include">
             <e p="Grid.cs" t="Include" />
-            <e p="GridObject.cs" t="Include" />
-            <e p="Testing.cs" t="Include" />
+            <e p="GridController.cs" t="Include" />
+            <e p="GridObj.cs" t="Include" />
+          </e>
+          <e p="Installers" t="Include">
+            <e p="BallzMergeInstaller.cs" t="Include" />
           </e>
           <e p="Scripts" t="Include">
-            <e p="BallDestruct.cs" t="Include" />
             <e p="BallMovingState.cs" t="Include" />
             <e p="BallStaticState.cs" t="Include" />
-            <e p="BallzMergeInstaller.cs" t="Include" />
             <e p="IBallState.cs" t="Include" />
+            <e p="InputHandler.cs" t="Include" />
             <e p="ProjectileLauncher.cs" t="Include" />
           </e>
         </e>
@@ -72,7 +74,6 @@
             </e>
           </e>
         </e>
-        <e p="GridObj.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
