@@ -9,6 +9,8 @@ public class GridController : MonoBehaviour
     public Vector2 cellSize = new Vector2(1f, 1f); 
     public Vector2 spacing = new Vector2(0.2f, 0.2f);
     public GridObj referenceGridObject;
+    public BlockSpawnRules blockSpawnRules;
+    public BlockCountSpawnChances blockCountSpawnChances;
 
     private Grid grid;
     private IEventAggregator eventAggregator;
@@ -21,9 +23,18 @@ public class GridController : MonoBehaviour
 
     void Start()
     {
-        grid = new Grid(width, height, cellSize, spacing, referenceGridObject, 10);
+        grid = new Grid(width, height, cellSize, spacing, referenceGridObject, blockSpawnRules, blockCountSpawnChances);
         eventAggregator.Subscribe<BallSpawnedEvent>(OnBallSpawned);
         eventAggregator.Subscribe<BallMoveBlockLineEvent>(OnMoveBlockLine);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            grid.DebugGridCells();
+
+        }
     }
 
     private void OnDestroy()
@@ -45,6 +56,9 @@ public class GridController : MonoBehaviour
 
     private void OnMoveBlockLine(BallMoveBlockLineEvent e)
     {
+        grid.IncrementMoveCount();
         grid.DeleteRow(0);
+        grid.SpawnNewBlocks();
+        //grid.CheckForMerges();
     }
 }

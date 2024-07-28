@@ -22,7 +22,8 @@ public class ProjectileLauncher : MonoBehaviour
 
     [Header("Ball")]
     public Ball m_BallPrefab;
-    public Ball m_CurrentBall;
+    private Ball m_CurrentBall;
+
 
     private DiContainer _container;
     private IEventAggregator _eventAggregator;

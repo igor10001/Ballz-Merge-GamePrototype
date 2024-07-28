@@ -9,6 +9,8 @@
       <e p="Assets" t="Include">
         <e p="_" t="Include">
           <e p="GridScripts" t="Include">
+            <e p="BlockCounsSpawnChances.cs" t="Include" />
+            <e p="BlockSpawnRules.cs" t="Include" />
             <e p="Grid.cs" t="Include" />
             <e p="GridController.cs" t="Include" />
             <e p="GridObj.cs" t="Include" />
@@ -25,6 +27,7 @@
             <e p="IBallState.cs" t="Include" />
             <e p="IEventAggregator.cs" t="Include" />
             <e p="InputHandler.cs" t="Include" />
+            <e p="LinePrediction.cs" t="Include" />
             <e p="ProjectileLauncher.cs" t="Include" />
           </e>
         </e>
