@@ -24,7 +24,6 @@ public class ProjectileLauncher : MonoBehaviour
     public Ball m_BallPrefab;
     private Ball m_CurrentBall;
 
-
     private DiContainer _container;
     private IEventAggregator _eventAggregator;
 
@@ -59,17 +58,26 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void HandleDragStart(Vector3 startPosition)
     {
-        m_StartPosition = startPosition;
+        if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallStaticState)
+        {
+            m_StartPosition = startPosition;
+        }
     }
 
     private void HandleDrag(Vector3 worldPosition)
     {
-        ContinueDrag(worldPosition);
+        if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallStaticState)
+        {
+            ContinueDrag(worldPosition);
+        }
     }
 
     private void HandleDragEnd(Vector3 endPosition)
     {
-        EndDrag(endPosition);
+        if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallStaticState)
+        {
+            EndDrag(endPosition);
+        }
     }
 
     private void ContinueDrag(Vector3 worldPosition)

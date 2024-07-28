@@ -71,13 +71,22 @@ public class Grid
 
         gridObjects[x, y] = newGridObj;
 
-        newGridObj.transform.localScale = new Vector3(cellSize.x / newGridObj.GetComponent<Renderer>().bounds.size.x,
-                                                      cellSize.y / newGridObj.GetComponent<Renderer>().bounds.size.y, 1);
+        // Calculate the full scale based on the cell size and the object's renderer bounds
+        Vector3 fullScale = new Vector3(cellSize.x / newGridObj.GetComponent<Renderer>().bounds.size.x,
+            cellSize.y / newGridObj.GetComponent<Renderer>().bounds.size.y, 1);
+
+        // Set the initial scale to a small size (e.g., 0.1f)
+        newGridObj.transform.localScale = fullScale * 0.1f;
+
+        // Animate the scale to the full size
+        newGridObj.transform.DOScale(fullScale, 0.5f).SetEase(Ease.OutBack).OnComplete(() =>
+        {
+            CreateTextMesh(newGridObj);
+        });
+    
 
         newGridObj.GetComponent<SpriteRenderer>().color = GetRandomColor();
-        CreateTextMesh(newGridObj);
     }
-
     private int GetRandomBlockNumber()
     {
         var rule = GetCurrentBlockNumberRule();
@@ -126,9 +135,9 @@ public class Grid
             gridObjects[x2, y2] = obj;
             gridObjects[x1, y1] = null;
             obj.GridPosition = new Vector2(x2, y2);
-            obj.transform.DOMove(GetWorldPosition(x2, y2), 1f).OnComplete(() =>
+            obj.transform.DOMove(GetWorldPosition(x2, y2), 0.5f).OnComplete(() =>
             {
-                obj.CheckForMerge();
+               // obj.CheckForMerge();
             });
         }
     }
@@ -237,7 +246,7 @@ public class Grid
 
         TextMesh textMesh = textObj.AddComponent<TextMesh>();
         textMesh.text = gridObj.Number.ToString();
-        textMesh.fontSize = 32;
+        textMesh.fontSize = 60;
         textMesh.color = Color.black;
 
         textMesh.alignment = TextAlignment.Center;

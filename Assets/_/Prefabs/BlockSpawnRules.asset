@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f9507c515342ee895a0a0b90d3eb9b, type: 3}
   m_Name: BlockSpawnRules
   m_EditorClassIdentifier: 
-  spawnRules:
+  blockNumberRules:
   - minMoves: 1
     maxMoves: 5
-    possibleNumbers: 0100000002000000
-    spawnChances:
-    - 60
+    possibleBlockNumbers: 0100000002000000
+  - minMoves: 6
+    maxMoves: 10
+    possibleBlockNumbers: 010000000200000003000000

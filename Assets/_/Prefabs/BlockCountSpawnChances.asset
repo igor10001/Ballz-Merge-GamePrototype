@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dee2da570544c5b15298013d126c51, type: 3}
   m_Name: BlockCountSpawnChances
   m_EditorClassIdentifier: 
-  blockCountRules: []
+  blockCountRules:
+  - minMoves: 1
+    maxMoves: 5
+    blockCountChances:
+    - blockCount: 1
+      probability: 60
+    - blockCount: 2
+      probability: 40
+  - minMoves: 6
+    maxMoves: 10
+    blockCountChances:
+    - blockCount: 1
+      probability: 40
+    - blockCount: 2
+      probability: 40
+    - blockCount: 3
+      probability: 20
