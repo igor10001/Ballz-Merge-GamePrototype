@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public class Grid
 {
@@ -13,6 +16,8 @@ public class Grid
     private BlockSpawnRules blockSpawnRules;
     private BlockCountSpawnChances blockCountSpawnChances;
     private int moveCount;
+    private bool isFirstBlockInRowZero;
+    public event EventHandler OnFirstBlockInRowZeroPlaced;
 
     public Grid(int width, int height, Vector2 cellSize, Vector2 spacing, GridObj referenceGridObject, BlockSpawnRules blockSpawnRules, BlockCountSpawnChances blockCountSpawnChances)
     {
@@ -135,10 +140,20 @@ public class Grid
             gridObjects[x2, y2] = obj;
             gridObjects[x1, y1] = null;
             obj.GridPosition = new Vector2(x2, y2);
-            obj.transform.DOMove(GetWorldPosition(x2, y2), 0.5f).OnComplete(() =>
-            {
+            obj.transform.DOMove(GetWorldPosition(x2, y2), 0.4f).OnComplete(() =>
+            { 
+                CheckAndLogFirstBlockInRowZero(x2, y2);
                // obj.CheckForMerge();
             });
+        }
+    }
+    private void CheckAndLogFirstBlockInRowZero(int x, int y)
+    {
+        if (y == 0 && !isFirstBlockInRowZero)
+        {
+            OnFirstBlockInRowZeroPlaced?.Invoke(this, EventArgs.Empty);
+
+            isFirstBlockInRowZero = true;
         }
     }
 
@@ -146,10 +161,6 @@ public class Grid
     {
         moveCount++;
     }
-
-   
-    
-
     private int DetermineNumberOfBlocksToSpawn(BlockCountSpawnChances.MoveRangeBlockCounts rule)
     {
         float rand = Random.value * 100;

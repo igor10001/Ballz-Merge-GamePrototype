@@ -19,16 +19,24 @@
             <e p="BallzMergeInstaller.cs" t="Include" />
           </e>
           <e p="Scripts" t="Include">
+            <e p="Ball.cs" t="Include" />
             <e p="BallMoveBlockLineEvent.cs" t="Include" />
             <e p="BallMovingState.cs" t="Include" />
             <e p="BallSpawnedEvent.cs" t="Include" />
             <e p="BallStaticState.cs" t="Include" />
             <e p="EventAggregator.cs" t="Include" />
+            <e p="FirstBlockInRowZeroEvent.cs" t="Include" />
+            <e p="GameController.cs" t="Include" />
+            <e p="GameSaver.cs" t="Include" />
+            <e p="GameState.cs" t="Include" />
+            <e p="GameUIController.cs" t="Include" />
+            <e p="GameUIView.cs" t="Include" />
             <e p="IBallState.cs" t="Include" />
             <e p="IEventAggregator.cs" t="Include" />
             <e p="InputHandler.cs" t="Include" />
             <e p="LinePrediction.cs" t="Include" />
             <e p="ProjectileLauncher.cs" t="Include" />
+            <e p="ScoreModel.cs" t="Include" />
           </e>
         </e>
         <e p="CodeMonkey" t="Include">
@@ -67,7 +75,6 @@
             </e>
             <e p="GameManager_ballz.cs" t="Include" />
             <e p="Gameplay" t="Include">
-              <e p="Ball.cs" t="Include" />
               <e p="BallLauncher.cs" t="Include" />
               <e p="Brick.cs" t="Include" />
               <e p="BrickSpawner.cs" t="Include" />

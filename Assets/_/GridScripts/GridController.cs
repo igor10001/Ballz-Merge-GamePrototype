@@ -11,9 +11,9 @@ public class GridController : MonoBehaviour
     public GridObj referenceGridObject;
     public BlockSpawnRules blockSpawnRules;
     public BlockCountSpawnChances blockCountSpawnChances;
-
+    public event EventHandler OnBlocksRowMove;
     private Grid grid;
-    private IEventAggregator eventAggregator;
+    public IEventAggregator eventAggregator;
 
     [Inject]
     public void Construct(IEventAggregator eventAggregator)
@@ -24,6 +24,7 @@ public class GridController : MonoBehaviour
     void Start()
     {
         grid = new Grid(width, height, cellSize, spacing, referenceGridObject, blockSpawnRules, blockCountSpawnChances);
+        grid.OnFirstBlockInRowZeroPlaced += GridOnOnFirstBlockInRowZeroPlaced;
         eventAggregator.Subscribe<BallSpawnedEvent>(OnBallSpawned);
         eventAggregator.Subscribe<BallMoveBlockLineEvent>(OnMoveBlockLine);
     }
@@ -37,6 +38,11 @@ public class GridController : MonoBehaviour
         }
     }
 
+    private void GridOnOnFirstBlockInRowZeroPlaced(object sender, EventArgs e)
+    {
+        eventAggregator.Publish(new FirstBlockInRowZeroEvent());
+    }
+
     private void OnDestroy()
     {
         eventAggregator.Unsubscribe<BallSpawnedEvent>(OnBallSpawned);
@@ -45,17 +51,17 @@ public class GridController : MonoBehaviour
 
     private void OnBallSpawned(BallSpawnedEvent e)
     {
-        // Subscribe once
-        e.Ball.OnMoveBlockLine += HandleOnMoveBlockLine;
+        e.Ball.OnBallStaticState += HandleOnBallStaticState;
     }
 
-    private void HandleOnMoveBlockLine(object sender, EventArgs e)
+    private void HandleOnBallStaticState(object sender, EventArgs e)
     {
         eventAggregator.Publish(new BallMoveBlockLineEvent());
     }
 
     private void OnMoveBlockLine(BallMoveBlockLineEvent e)
     {
+        OnBlocksRowMove?.Invoke(this, EventArgs.Empty);
         grid.IncrementMoveCount();
         grid.DeleteRow(0);
         grid.SpawnNewBlocks();

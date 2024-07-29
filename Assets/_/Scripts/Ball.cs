@@ -21,7 +21,7 @@ public class Ball : MonoBehaviour
     private ProjectileLauncher _projectileLauncher;
     private IEventAggregator _eventAggregator;
 
-    public event EventHandler OnMoveBlockLine;
+    public event EventHandler OnBallStaticState;
 
     [Inject]
     public void Construct(ProjectileLauncher projectileLauncher, IEventAggregator eventAggregator)
@@ -81,7 +81,7 @@ public class Ball : MonoBehaviour
         ChangeState(new BallStaticState());
 
         // Ensure the event is only invoked once
-        OnMoveBlockLine?.Invoke(this, EventArgs.Empty);
+        OnBallStaticState?.Invoke(this, EventArgs.Empty);
     }
 
     public static void ResetFirstCollisionPoint()
