@@ -21,11 +21,56 @@
   <component name="ChangeListManager">
     <list default="true" id="6051722d-0e54-49dd-9451-1327d38ad6c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Prefabs/BlockSpawnRules.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Prefabs/BlockSpawnRules.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/BlockCounsSpawnChances.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/BlockCounsSpawnChances.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/BlockCounsSpawnChances.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/BlockCounsSpawnChances.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/BlockSpawnRules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/BlockSpawnRules.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/BlockSpawnRules.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/BlockSpawnRules.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/Grid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/Grid.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/GridController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/GridObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridObj.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/GridObj.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridObj.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Installers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Installers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Installers/BallzMergeInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Installers/BallzMergeInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Installers/BallzMergeInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Installers/BallzMergeInstaller.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/Ball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/Ball.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/BallMoveBlockLineEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Events/BallMoveBlockLineEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/BallMoveBlockLineEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Events/BallMoveBlockLineEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/BallMovingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/BallMovingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/BallMovingState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/BallMovingState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/BallSpawnedEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Events/BallSpawnedEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/BallSpawnedEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Events/BallSpawnedEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/BallStaticState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/BallStaticState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/BallStaticState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/BallStaticState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/EventAggregator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Core/EventAggregator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/EventAggregator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Core/EventAggregator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/FirstBlockInRowZeroEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Events/FirstBlockInRowZeroEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/FirstBlockInRowZeroEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Events/FirstBlockInRowZeroEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/GameController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Core/GameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Core/GameState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/GameUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/GameUIController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameUIView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/UI/GameUIView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameUIView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/UI/GameUIView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/IBallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/IBallState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/IBallState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/IBallState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/IEventAggregator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Core/IEventAggregator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/IEventAggregator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Core/IEventAggregator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/InputHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/InputHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/LinePrediction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/LinePrediction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/LinePrediction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/LinePrediction.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/ProjectileLauncher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/ProjectileLauncher.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ScoreModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/ScoreModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ScoreModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/ScoreModel.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +88,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_/Installers/BallzMergeInstaller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_/GridScripts/GridObj.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_/Scripts/Installers/BallzMergeInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridObj.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7A9A3B57-78C3-47B6-839D-F652EBDC3172/6d/2fbacf0a/EventDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -152,7 +197,7 @@
       <workItem from="1722137110009" duration="311000" />
       <workItem from="1722140307463" duration="494000" />
       <workItem from="1722142019704" duration="629000" />
-      <workItem from="1722170605154" duration="34283000" />
+      <workItem from="1722170605154" duration="35844000" />
     </task>
     <servers />
   </component>
@@ -308,7 +353,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs</url>
+          <url>file://$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs</url>
           <line>10</line>
           <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameSaver.cs" initialLine="10">
             <startOffsets>
@@ -321,7 +366,7 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs</url>
+          <url>file://$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs</url>
           <line>19</line>
           <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameSaver.cs" initialLine="18">
             <startOffsets>
@@ -334,7 +379,7 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs</url>
+          <url>file://$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs</url>
           <line>26</line>
           <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameSaver.cs" initialLine="22">
             <startOffsets>

@@ -2255,6 +2255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameUIView: {fileID: 1822168133}
+  speedBoostBtn: {fileID: 291160875}
 --- !u!1 &1989859993
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,35 +8,47 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_" t="Include">
-          <e p="GridScripts" t="Include">
-            <e p="BlockCounsSpawnChances.cs" t="Include" />
-            <e p="BlockSpawnRules.cs" t="Include" />
-            <e p="Grid.cs" t="Include" />
-            <e p="GridController.cs" t="Include" />
-            <e p="GridObj.cs" t="Include" />
-          </e>
-          <e p="Installers" t="Include">
-            <e p="BallzMergeInstaller.cs" t="Include" />
-          </e>
           <e p="Scripts" t="Include">
-            <e p="Ball.cs" t="Include" />
-            <e p="BallMoveBlockLineEvent.cs" t="Include" />
-            <e p="BallMovingState.cs" t="Include" />
-            <e p="BallSpawnedEvent.cs" t="Include" />
-            <e p="BallStaticState.cs" t="Include" />
-            <e p="EventAggregator.cs" t="Include" />
-            <e p="FirstBlockInRowZeroEvent.cs" t="Include" />
-            <e p="GameController.cs" t="Include" />
-            <e p="GameSaver.cs" t="Include" />
-            <e p="GameState.cs" t="Include" />
-            <e p="GameUIController.cs" t="Include" />
-            <e p="GameUIView.cs" t="Include" />
-            <e p="IBallState.cs" t="Include" />
-            <e p="IEventAggregator.cs" t="Include" />
-            <e p="InputHandler.cs" t="Include" />
-            <e p="LinePrediction.cs" t="Include" />
-            <e p="ProjectileLauncher.cs" t="Include" />
-            <e p="ScoreModel.cs" t="Include" />
+            <e p="Ball" t="Include">
+              <e p="Ball.cs" t="Include" />
+              <e p="BallMovingState.cs" t="Include" />
+              <e p="BallStaticState.cs" t="Include" />
+              <e p="IBallState.cs" t="Include" />
+              <e p="ProjectileLauncher.cs" t="Include" />
+            </e>
+            <e p="Blocks" t="Include">
+              <e p="BlockCounsSpawnChances.cs" t="Include" />
+              <e p="BlockSpawnRules.cs" t="Include" />
+              <e p="Grid.cs" t="Include" />
+              <e p="GridController.cs" t="Include" />
+              <e p="GridObj.cs" t="Include" />
+            </e>
+            <e p="Controllers" t="Include">
+              <e p="GameController.cs" t="Include" />
+              <e p="GameUIController.cs" t="Include" />
+              <e p="InputHandler.cs" t="Include" />
+            </e>
+            <e p="Core" t="Include">
+              <e p="EventAggregator.cs" t="Include" />
+              <e p="GameState.cs" t="Include" />
+              <e p="IEventAggregator.cs" t="Include" />
+            </e>
+            <e p="Events" t="Include">
+              <e p="BallMoveBlockLineEvent.cs" t="Include" />
+              <e p="BallSpawnedEvent.cs" t="Include" />
+              <e p="FirstBlockInRowZeroEvent.cs" t="Include" />
+            </e>
+            <e p="Installers" t="Include">
+              <e p="BallzMergeInstaller.cs" t="Include" />
+            </e>
+            <e p="UI" t="Include">
+              <e p="GameUIView.cs" t="Include" />
+            </e>
+            <e p="Utilities" t="Include">
+              <e p="GameSaver.cs" t="Include" />
+              <e p="LinePrediction.cs" t="Include" />
+              <e p="ScoreModel.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="CodeMonkey" t="Include">
