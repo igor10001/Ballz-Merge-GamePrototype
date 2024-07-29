@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -23,6 +24,13 @@ public class GridController : MonoBehaviour
 
     void Start()
     {
+        /*blockSpawnRules.blockColorMappings = new List<BlockSpawnRules.BlockColorMapping>
+        {
+            new BlockSpawnRules.BlockColorMapping { number = 1, color = Color.red },
+            new BlockSpawnRules.BlockColorMapping { number = 2, color = Color.green },
+            new BlockSpawnRules.BlockColorMapping { number = 3, color = Color.blue },
+            // Add more mappings as needed
+        };*/
         grid = new Grid(width, height, cellSize, spacing, referenceGridObject, blockSpawnRules, blockCountSpawnChances);
         grid.OnFirstBlockInRowZeroPlaced += GridOnOnFirstBlockInRowZeroPlaced;
         eventAggregator.Subscribe<BallSpawnedEvent>(OnBallSpawned);

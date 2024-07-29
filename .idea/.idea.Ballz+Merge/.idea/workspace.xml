@@ -22,14 +22,13 @@
     <list default="true" id="6051722d-0e54-49dd-9451-1327d38ad6c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/BlockSpawnRules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/GridScripts/BlockSpawnRules.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/GridScripts/GridController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scenes/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Prefabs/BlockSpawnRules.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Prefabs/BlockSpawnRules.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameUIView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/GameUIView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ScoreModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/ScoreModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,25 +75,25 @@
         <option value="$PROJECT_DIR$/Assets/_/Scripts/BallMoveBlockLineEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/LinePrediction.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/GridScripts/BlockSpawnRules.cs" />
         <option value="$PROJECT_DIR$/Assets/_/GridScripts/BlockCounsSpawnChances.cs" />
         <option value="$PROJECT_DIR$/Assets/_/GridScripts/todo.tt" />
         <option value="$PROJECT_DIR$/Assets/_/GridScripts/GridView.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameSave.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameStateSaver.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/ScoreModel.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameStateController.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Installers/BallzMergeInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/FirstBlockInRowZeroEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameState.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/GridScripts/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameUIView.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/ScoreModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/GridScripts/BlockSpawnRules.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/GridScripts/GridController.cs" />
       </list>
     </option>
   </component>
@@ -156,7 +155,7 @@
       <workItem from="1722137110009" duration="311000" />
       <workItem from="1722140307463" duration="494000" />
       <workItem from="1722142019704" duration="629000" />
-      <workItem from="1722170605154" duration="30027000" />
+      <workItem from="1722170605154" duration="32007000" />
     </task>
     <servers />
   </component>
@@ -313,13 +312,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs</url>
-          <line>11</line>
+          <line>10</line>
           <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameSaver.cs" initialLine="10">
             <startOffsets>
-              <option value="351" />
+              <option value="306" />
             </startOffsets>
             <endOffsets>
-              <option value="389" />
+              <option value="344" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="17" />
@@ -329,39 +328,26 @@
           <line>19</line>
           <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameSaver.cs" initialLine="18">
             <startOffsets>
-              <option value="562" />
+              <option value="554" />
             </startOffsets>
             <endOffsets>
-              <option value="608" />
+              <option value="594" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs</url>
-          <line>23</line>
+          <line>26</line>
           <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameSaver.cs" initialLine="22">
             <startOffsets>
-              <option value="654" />
+              <option value="717" />
             </startOffsets>
             <endOffsets>
-              <option value="678" />
+              <option value="741" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs</url>
-          <line>34</line>
-          <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameUIController.cs" initialLine="33">
-            <startOffsets>
-              <option value="664" />
-            </startOffsets>
-            <endOffsets>
-              <option value="709" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

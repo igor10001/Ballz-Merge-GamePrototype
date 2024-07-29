@@ -1,8 +1,7 @@
 ﻿public class ScoreModel
 {
-    public int MovesCount { get; set; }
-    public int HighScore { get; set; }
-
+    public int MovesCount;
+    public int HighScore;
 
     public ScoreModel()
     {

@@ -67,12 +67,12 @@ public class Grid
 
    
 
-
     private void CreateGridObject(int x, int y)
     {
         Vector3 worldPosition = GetWorldPosition(x, y);
         GridObj newGridObj = Object.Instantiate(referenceGridObject, worldPosition, Quaternion.identity);
-        newGridObj.Initialize(this, GetRandomBlockNumber(), new Vector2(x, y));
+        int blockNumber = GetRandomBlockNumber();
+        newGridObj.Initialize(this, blockNumber, new Vector2(x, y));
 
         gridObjects[x, y] = newGridObj;
 
@@ -88,10 +88,24 @@ public class Grid
         {
             CreateTextMesh(newGridObj);
         });
-    
 
-        newGridObj.GetComponent<SpriteRenderer>().color = GetRandomColor();
+        newGridObj.GetComponent<SpriteRenderer>().color = GetColorForBlockNumber(blockNumber);
     }
+
+    private Color GetColorForBlockNumber(int number)
+    {
+        foreach (var mapping in blockSpawnRules.blockColorMappings)
+        {
+            if (mapping.number == number)
+            {
+                return mapping.color;
+            }
+        }
+        return Color.white; // Default color if no mapping is found
+    }
+
+    
+    
     private int GetRandomBlockNumber()
     {
         var rule = GetCurrentBlockNumberRule();
@@ -198,19 +212,27 @@ public class Grid
     private List<Vector2Int> GetAvailablePositions()
     {
         List<Vector2Int> availablePositions = new List<Vector2Int>();
-        for (int y = height - 1; y >= 0; y--) // Start from the top row
+    
+        // Adăugăm toate pozițiile din ultimul rând care sunt libere
+        for (int x = 0; x < width; x++)
         {
-            for (int x = 0; x < width; x++) // Move left to right within the row
+            if (gridObjects[x, height - 1] == null)
             {
-                if (gridObjects[x, y] == null)
-                {
-                    availablePositions.Add(new Vector2Int(x, y));
-                }
+                availablePositions.Add(new Vector2Int(x, height - 1));
             }
         }
+
+        // Amestecăm pozițiile pentru a obține o distribuție aleatorie
+        for (int i = 0; i < availablePositions.Count; i++)
+        {
+            Vector2Int temp = availablePositions[i];
+            int randomIndex = Random.Range(i, availablePositions.Count);
+            availablePositions[i] = availablePositions[randomIndex];
+            availablePositions[randomIndex] = temp;
+        }
+
         return availablePositions;
     }
-
     private void SpawnInitialBlocks()
     {
         List<Vector2Int> availablePositions = GetAvailablePositions();

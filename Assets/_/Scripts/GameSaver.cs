@@ -7,7 +7,6 @@ public static class GameSaver
 
     public static void SaveData(ScoreModel gameStateModel)
     {
-        Debug.Log(gameStateModel.HighScore);
         string json = JsonUtility.ToJson(gameStateModel);
         File.WriteAllText(saveFilePath, json);
     }
@@ -17,7 +16,11 @@ public static class GameSaver
         if (File.Exists(saveFilePath))
         {
             string json = File.ReadAllText(saveFilePath);
-            return JsonUtility.FromJson<ScoreModel>(json);
+            
+            ScoreModel scoreModel =  JsonUtility.FromJson<ScoreModel>(json);
+            Debug.Log(scoreModel.HighScore);
+            return scoreModel;
+
         }
         else
         {

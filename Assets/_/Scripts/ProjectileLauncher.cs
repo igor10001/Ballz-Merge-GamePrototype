@@ -67,18 +67,36 @@ public class ProjectileLauncher : MonoBehaviour
     private void HandleDragStart(Vector3 startPosition)
     {
         if (_currentState == GameState.GameOver) return;
+        if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallMovingState)
+        {
+            // Do not start drag if the ball is moving
+            return;
+        }
+
         m_StartPosition = startPosition;
     }
 
     private void HandleDrag(Vector3 worldPosition)
     {
         if (_currentState == GameState.GameOver) return;
+        if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallMovingState)
+        {
+            // Do not start drag if the ball is moving
+            return;
+        }
+
         ContinueDrag(worldPosition);
     }
 
     private void HandleDragEnd(Vector3 endPosition)
     {
         if (_currentState == GameState.GameOver) return;
+        if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallMovingState)
+        {
+            // Do not start drag if the ball is moving
+            return;
+        }
+
         EndDrag(endPosition);
     }
 

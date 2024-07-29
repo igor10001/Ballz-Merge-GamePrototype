@@ -14,4 +14,13 @@ public class BlockSpawnRules : ScriptableObject
     }
 
     public List<MoveRangeBlockNumbers> blockNumberRules;
+
+    [Serializable]
+    public class BlockColorMapping
+    {
+        public int number;
+        public Color color;
+    }
+
+    public List<BlockColorMapping> blockColorMappings;
 }
