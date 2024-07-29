@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class GameUIController : MonoBehaviour
 {
     public GameUIView gameUIView;
     private ScoreModel scoreModel;
+    [SerializeField] private Button speedBoostBtn;
 
+    public event EventHandler OnSpeedBoostBtnClick;
     private void Start()
     {
+        speedBoostBtn.onClick.AddListener(() =>{OnSpeedBoostBtnClick?.Invoke(this, EventArgs.Empty); speedBoostBtn.onClick.RemoveAllListeners();});
         LoadHighScore();
         UpdateUI();
     }

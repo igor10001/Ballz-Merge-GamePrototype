@@ -21,14 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6051722d-0e54-49dd-9451-1327d38ad6c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/BlockSpawnRules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/GridScripts/BlockSpawnRules.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/GridScripts/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/GridScripts/GridController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_/Prefabs/BlockSpawnRules.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Prefabs/BlockSpawnRules.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ScoreModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/ScoreModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,19 +78,19 @@
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameSave.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameStateSaver.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameStateController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Installers/BallzMergeInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/FirstBlockInRowZeroEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameState.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameUIView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameSaver.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/ScoreModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" />
         <option value="$PROJECT_DIR$/Assets/_/GridScripts/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/_/GridScripts/BlockSpawnRules.cs" />
         <option value="$PROJECT_DIR$/Assets/_/GridScripts/GridController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/ProjectileLauncher.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" />
       </list>
     </option>
   </component>
@@ -155,7 +152,7 @@
       <workItem from="1722137110009" duration="311000" />
       <workItem from="1722140307463" duration="494000" />
       <workItem from="1722142019704" duration="629000" />
-      <workItem from="1722170605154" duration="32007000" />
+      <workItem from="1722170605154" duration="34283000" />
     </task>
     <servers />
   </component>

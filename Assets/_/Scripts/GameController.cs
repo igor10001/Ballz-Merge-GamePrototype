@@ -23,6 +23,19 @@ public class GameController : MonoBehaviour
         CurrentState = GameState.Gameplay;
         _gridController.OnBlocksRowMove += GridControllerOnOnBlocksRowMove;
         _gridController.eventAggregator.Subscribe<FirstBlockInRowZeroEvent>(OnFirstBlockInRowZeroEvent);
+        _gameUIController.OnSpeedBoostBtnClick += GameUIControllerOnOnSpeedBoostBtnClick;
+    }
+
+    private void OnDestroy()
+    {
+        _gridController.OnBlocksRowMove -= GridControllerOnOnBlocksRowMove;
+        _gameUIController.OnSpeedBoostBtnClick -= GameUIControllerOnOnSpeedBoostBtnClick;
+
+    }
+
+    private void GameUIControllerOnOnSpeedBoostBtnClick(object sender, EventArgs e)
+    {
+        _projectileLauncher.CurrentBall.MoveSpeed *= 5;
     }
 
     private void GridControllerOnOnBlocksRowMove(object sender, EventArgs e)

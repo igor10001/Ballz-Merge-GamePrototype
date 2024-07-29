@@ -21,8 +21,8 @@ MonoBehaviour:
     possibleBlockNumbers: 010000000200000003000000
   blockColorMappings:
   - number: 1
-    color: {r: 1, g: 0, b: 0, a: 0}
+    color: {r: 1, g: 0, b: 0, a: 1}
   - number: 2
-    color: {r: 0, g: 0.296113, b: 1, a: 0}
+    color: {r: 0, g: 1, b: 0, a: 1}
   - number: 3
-    color: {r: 0.34536266, g: 1, b: 0, a: 0}
+    color: {r: 0, g: 0.5671959, b: 1, a: 1}

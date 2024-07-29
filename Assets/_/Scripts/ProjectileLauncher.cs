@@ -22,6 +22,8 @@ public class ProjectileLauncher : MonoBehaviour
     [Header("Ball")]
     public Ball m_BallPrefab;
     private Ball m_CurrentBall;
+    public Ball CurrentBall => m_CurrentBall;
+
     private GameState _currentState;
 
     private DiContainer _container;

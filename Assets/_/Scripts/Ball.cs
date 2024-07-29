@@ -12,7 +12,13 @@ public class Ball : MonoBehaviour
     private SpriteRenderer m_SpriteRenderer;
 
     public int m_WallCollisionDuration = 0;
-    [SerializeField] private float m_MoveSpeed = 20;
+    [SerializeField] private float m_MoveSpeed;
+    public float MoveSpeed
+    {
+        get => m_MoveSpeed;
+        set => m_MoveSpeed = value;
+    }
+
     public float m_MinimumYPosition = -4.7f;
     private const string OnBallReturnedMethod = "OnBallReturned";
     private IBallState _currentState;
