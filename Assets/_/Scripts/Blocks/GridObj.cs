@@ -67,6 +67,8 @@ public class GridObj : MonoBehaviour
                 GridObj adjacentObj = grid.GetGridObjectAt(adjacentPosition.x, adjacentPosition.y);
                 if (adjacentObj != null && adjacentObj.number == number)
                 {
+                    AudioEvents.PlayBlockDestructionSound();
+
                     grid.MergeGridObjects((int)gridPosition.x, (int)gridPosition.y, adjacentPosition.x, adjacentPosition.y);
                     break; 
                 }

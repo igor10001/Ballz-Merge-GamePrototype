@@ -9,6 +9,11 @@
       <e p="Assets" t="Include">
         <e p="_" t="Include">
           <e p="Scripts" t="Include">
+            <e p="Audio" t="Include">
+              <e p="AudioClipRefsSO.cs" t="Include" />
+              <e p="AudioController.cs" t="Include" />
+              <e p="AudioEvents.cs" t="Include" />
+            </e>
             <e p="Ball" t="Include">
               <e p="Ball.cs" t="Include" />
               <e p="BallMovingState.cs" t="Include" />

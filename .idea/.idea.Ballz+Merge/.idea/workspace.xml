@@ -20,121 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6051722d-0e54-49dd-9451-1327d38ad6c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_/ScriptableObjects/AudioClips.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/ScriptableObjects/AudioClips.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/Audio.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/Audio/AudioClipRefsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/Audio/AudioClipRefsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/Audio/AudioController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/Audio/AudioController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/Audio/AudioEvents.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_/Scripts/Audio/AudioEvents.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ballz+Merge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz).meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Final Art.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Final Art/BG MM1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Final Art/BG MM1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/Brick.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/Brick.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/Dot Lines.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/Dot Lines.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/ic_return_balls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/ic_return_balls.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/score ball ring.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/score ball ring.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/score ball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/score ball.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Gameplay/wall.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Back Home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Back Home.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Panel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Panel.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Play.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Play3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Play3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Q.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/Q.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/SS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/SS.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_email.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_email.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_instagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_instagram.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_leaderboard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_leaderboard.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_moregames.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_moregames.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_pause.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_rate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_rate.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_settings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_settings.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_share.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/Menu elements/ic_share.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/White Ball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/White Ball.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/triangle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Art Works/triangle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Fonts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Fonts/ClearSans-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Fonts/ClearSans-Bold.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Prefabs/Ball.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Prefabs/Ball.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Prefabs/Ball2.0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Prefabs/Ball2.0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Prefabs/BricksRow.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Prefabs/BricksRow.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Prefabs/ScoreRing.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Prefabs/ScoreRing.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scenes/Ballz.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scenes/Ballz.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scenes/Main.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scenes/Main.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/AudioManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/AudioManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Data Managing.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Data Managing/Loader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Data Managing/Loader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Data Managing/SavedGame.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Data Managing/SavedGame.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Data Managing/Saver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Data Managing/Saver.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/GameManager_ballz.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/GameManager_ballz.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BallLauncher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BallLauncher.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/Brick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/Brick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BrickSpawner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BrickSpawner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BricksRow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/BricksRow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/ScoreBall.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/ScoreBall.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/ScoreRing.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/Gameplay/ScoreRing.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/ScoreManager_ballz.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/ScoreManager_ballz.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/UI/MenuController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game(Ballz)/Scripts/UI/MenuController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Prefabs/Ball2.0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Prefabs/Ball2.0.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Ball/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/Ball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Ball/BallMovingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/BallMovingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Ball/ProjectileLauncher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Ball/ProjectileLauncher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/Grid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Controllers/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/UI/GameUIView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/UI/GameUIView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/LinePrediction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Utilities/LinePrediction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridObj.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,12 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/BlockSetup.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/GridScripts/GridObjecrt.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/BallzMergeInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/IBallState.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/BallMovingState.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/IBallObserver.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/BallDestruct.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/BallStaticState.cs" />
@@ -201,16 +94,22 @@
         <option value="$PROJECT_DIR$/Assets/_/Scripts/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/GameUIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/Ball/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/Ball/BallMovingState.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/Blocks/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/Controllers/InputHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/UI/GameUIView.cs" />
-        <option value="$PROJECT_DIR$/Assets/_/Scripts/Controllers/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/Audio/AudioEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/Audio/AudioClipRefsSO.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/Ball/Ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/Audio/AudioController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/Blocks/Grid.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/Blocks/GridObj.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/Controllers/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_/Scripts/Utilities/PredictionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/Utilities/LinePrediction.cs" />
         <option value="$PROJECT_DIR$/Assets/_/Scripts/Ball/ProjectileLauncher.cs" />
+        <option value="$PROJECT_DIR$/Assets/dottedLine/DottedLine.cs" />
       </list>
     </option>
   </component>
@@ -233,10 +132,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10148">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="10148" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -274,6 +173,7 @@
       <workItem from="1722142019704" duration="629000" />
       <workItem from="1722170605154" duration="37203000" />
       <workItem from="1722250362542" duration="1946000" />
+      <workItem from="1722266878979" duration="1288000" />
     </task>
     <servers />
   </component>
@@ -302,46 +202,46 @@
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state x="2307" y="388" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722031193458" />
-    <state width="1236" height="107" key="GridCell.Tab.0.bottom" timestamp="1722249940581">
+    <state width="1236" height="107" key="GridCell.Tab.0.bottom" timestamp="1722268469790">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state width="1493" height="41" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1722118055406" />
-    <state width="1236" height="107" key="GridCell.Tab.0.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722249940581" />
-    <state width="1236" height="107" key="GridCell.Tab.0.center" timestamp="1722249940581">
+    <state width="1236" height="107" key="GridCell.Tab.0.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722268469790" />
+    <state width="1236" height="107" key="GridCell.Tab.0.center" timestamp="1722268469790">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state width="1493" height="41" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1722118055406" />
-    <state width="1236" height="107" key="GridCell.Tab.0.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722249940581" />
-    <state width="1236" height="107" key="GridCell.Tab.0.left" timestamp="1722249940581">
+    <state width="1236" height="107" key="GridCell.Tab.0.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722268469790" />
+    <state width="1236" height="107" key="GridCell.Tab.0.left" timestamp="1722268469790">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state width="1493" height="41" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1722118055406" />
-    <state width="1236" height="107" key="GridCell.Tab.0.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722249940581" />
-    <state width="1236" height="107" key="GridCell.Tab.0.right" timestamp="1722249940581">
+    <state width="1236" height="107" key="GridCell.Tab.0.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722268469790" />
+    <state width="1236" height="107" key="GridCell.Tab.0.right" timestamp="1722268469790">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state width="1493" height="41" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1722118055406" />
-    <state width="1236" height="107" key="GridCell.Tab.0.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722249940581" />
-    <state width="1236" height="107" key="GridCell.Tab.1.bottom" timestamp="1722249940581">
+    <state width="1236" height="107" key="GridCell.Tab.0.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722268469790" />
+    <state width="1236" height="107" key="GridCell.Tab.1.bottom" timestamp="1722268488168">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state width="1493" height="41" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1722118055406" />
-    <state width="1236" height="107" key="GridCell.Tab.1.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722249940581" />
-    <state width="1236" height="107" key="GridCell.Tab.1.center" timestamp="1722249940581">
+    <state width="1236" height="107" key="GridCell.Tab.1.bottom/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722268488168" />
+    <state width="1236" height="107" key="GridCell.Tab.1.center" timestamp="1722268488168">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state width="1493" height="41" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1722118055406" />
-    <state width="1236" height="107" key="GridCell.Tab.1.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722249940581" />
-    <state width="1236" height="107" key="GridCell.Tab.1.left" timestamp="1722249940581">
+    <state width="1236" height="107" key="GridCell.Tab.1.center/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722268488168" />
+    <state width="1236" height="107" key="GridCell.Tab.1.left" timestamp="1722268488168">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state width="1493" height="41" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1722118055406" />
-    <state width="1236" height="107" key="GridCell.Tab.1.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722249940581" />
-    <state width="1236" height="107" key="GridCell.Tab.1.right" timestamp="1722249940581">
+    <state width="1236" height="107" key="GridCell.Tab.1.left/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722268488168" />
+    <state width="1236" height="107" key="GridCell.Tab.1.right" timestamp="1722268488168">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state width="1493" height="41" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1722118055406" />
-    <state width="1236" height="107" key="GridCell.Tab.1.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722249940581" />
+    <state width="1236" height="107" key="GridCell.Tab.1.right/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722268488168" />
     <state width="1236" height="107" key="GridCell.Tab.2.bottom" timestamp="1722249940581">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
@@ -407,44 +307,45 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="542" y="0" width="1008" height="882" maximized="true" key="dock-window-2/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722251975894" />
-    <state x="2207" y="142" width="744" height="801" key="find.popup" timestamp="1722109820833">
+    <state x="2207" y="142" width="744" height="801" key="find.popup" timestamp="1722268447829">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state x="2207" y="142" width="744" height="801" key="find.popup/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722109820833" />
+    <state x="2207" y="142" width="744" height="801" key="find.popup/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722268447829" />
     <state x="2209" y="297" width="700" height="530" key="recent.locations.popup" timestamp="1722212439408">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state x="2209" y="297" width="700" height="530" key="recent.locations.popup/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722212439408" />
-    <state x="2216" y="252" key="run.anything.popup" timestamp="1722103961697">
+    <state x="2216" y="252" width="672" height="677" key="run.anything.popup" timestamp="1722267185242">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
     <state x="355" y="170" key="run.anything.popup/1920.51.1280.974/0.0.1536.824@0.0.1536.824" timestamp="1722102243899" />
-    <state x="2216" y="252" key="run.anything.popup/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722103961697" />
-    <state x="2223" y="262" width="672" height="678" key="search.everywhere.popup" timestamp="1722199744902">
+    <state x="2216" y="252" width="672" height="677" key="run.anything.popup/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722267185242" />
+    <state x="2223" y="262" width="672" height="678" key="search.everywhere.popup" timestamp="1722273946993">
       <screen x="1920" y="51" width="1280" height="974" />
     </state>
-    <state x="2223" y="262" width="672" height="678" key="search.everywhere.popup/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722199744902" />
+    <state x="2223" y="262" width="672" height="678" key="search.everywhere.popup/1920.51.1280.974/0.0.1536.824@1920.51.1280.974" timestamp="1722273946993" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs</url>
-          <line>10</line>
-          <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameSaver.cs" initialLine="10" />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs</url>
-          <line>19</line>
-          <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameSaver.cs" initialLine="18" />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_/Scripts/Utilities/GameSaver.cs</url>
           <line>26</line>
           <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\GameSaver.cs" initialLine="22" />
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_/Scripts/Ball/Ball.cs</url>
+          <line>132</line>
+          <properties documentPath="D:\Ballz+Merge\Ballz+Merge\Assets\_\Scripts\Ball\Ball.cs" initialLine="132">
+            <startOffsets>
+              <option value="3843" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3874" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

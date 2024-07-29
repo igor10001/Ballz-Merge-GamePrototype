@@ -130,6 +130,7 @@ public class Ball : MonoBehaviour
         GridObj gridObj = collision.gameObject.GetComponent<GridObj>();
         if (gridObj != null)
         {
+            AudioEvents.PlayBallHitSound();
             Vector2 hitDirection = collision.contacts[0].normal; // Direction of the hit
             gridObj.OnBallHit(hitDirection);
         }
