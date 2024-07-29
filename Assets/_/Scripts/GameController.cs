@@ -2,23 +2,26 @@
 using UnityEngine;
 using Zenject;
 
-
 public class GameController : MonoBehaviour
 {
     public GameState CurrentState { get; private set; }
-    private  GridController _gridController;
-    private  GameUIController _gameUIController;
+    private GridController _gridController;
+    private GameUIController _gameUIController;
+    private ProjectileLauncher _projectileLauncher;
+
     [Inject]
-    public void Construct(GridController _gridController, GameUIController _gameUIController)
+    public void Construct(GridController gridController, GameUIController gameUIController, ProjectileLauncher projectileLauncher)
     {
-        this._gridController = _gridController;
-        this._gameUIController = _gameUIController;
+        _gridController = gridController;
+        _gameUIController = gameUIController;
+        _projectileLauncher = projectileLauncher;
     }
 
     private void Awake()
     {
+        Debug.Log(Application.persistentDataPath);
         CurrentState = GameState.Gameplay;
-        _gridController.OnBlocksRowMove +=  GridControllerOnOnBlocksRowMove;
+        _gridController.OnBlocksRowMove += GridControllerOnOnBlocksRowMove;
         _gridController.eventAggregator.Subscribe<FirstBlockInRowZeroEvent>(OnFirstBlockInRowZeroEvent);
     }
 
@@ -26,9 +29,19 @@ public class GameController : MonoBehaviour
     {
         _gameUIController.IncrementMovesCount();
     }
+
     private void OnFirstBlockInRowZeroEvent(FirstBlockInRowZeroEvent e)
     {
-        CurrentState = GameState.GameOver;
+        OnGameOver();
     }
-}
 
+    private void OnGameOver()
+    {
+        
+        CurrentState = GameState.GameOver;
+        _projectileLauncher.SetGameState(GameState.GameOver);
+        _gameUIController.ShowGameOver(); 
+        _gameUIController.SetHighScore();
+    }
+    
+}

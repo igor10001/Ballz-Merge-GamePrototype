@@ -6,7 +6,6 @@ using System;
 public class ProjectileLauncher : MonoBehaviour
 {
     [SerializeField] private InputHandler input;
-    public static ProjectileLauncher Instance { get; private set; }
 
     private Vector3 m_StartPosition;
     private Vector3 m_EndPosition;
@@ -23,6 +22,7 @@ public class ProjectileLauncher : MonoBehaviour
     [Header("Ball")]
     public Ball m_BallPrefab;
     private Ball m_CurrentBall;
+    private GameState _currentState;
 
     private DiContainer _container;
     private IEventAggregator _eventAggregator;
@@ -36,12 +36,7 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
+        
 
         m_LineRenderer = GetComponent<LineRenderer>();
         m_DefaultStartPosition = transform.position;
@@ -49,6 +44,19 @@ public class ProjectileLauncher : MonoBehaviour
         input.OnDragStart += HandleDragStart;
         input.OnDrag += HandleDrag;
         input.OnDragEnd += HandleDragEnd;
+    }
+    public void SetGameState(GameState newState)
+    {
+        _currentState = newState;
+        if (_currentState == GameState.GameOver)
+        {
+            StopAllCoroutines();
+            if (m_CurrentBall != null)
+            {
+                m_CurrentBall.gameObject.SetActive(false);
+            }
+           // m_LineRenderer.SetPosition(1, Vector3.zero);
+        }
     }
 
     private void Start()
@@ -58,26 +66,20 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void HandleDragStart(Vector3 startPosition)
     {
-        if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallStaticState)
-        {
-            m_StartPosition = startPosition;
-        }
+        if (_currentState == GameState.GameOver) return;
+        m_StartPosition = startPosition;
     }
 
     private void HandleDrag(Vector3 worldPosition)
     {
-        if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallStaticState)
-        {
-            ContinueDrag(worldPosition);
-        }
+        if (_currentState == GameState.GameOver) return;
+        ContinueDrag(worldPosition);
     }
 
     private void HandleDragEnd(Vector3 endPosition)
     {
-        if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallStaticState)
-        {
-            EndDrag(endPosition);
-        }
+        if (_currentState == GameState.GameOver) return;
+        EndDrag(endPosition);
     }
 
     private void ContinueDrag(Vector3 worldPosition)
@@ -102,7 +104,7 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void EndDrag(Vector3 endPosition)
     {
-        if (m_StartPosition == endPosition)
+        if (m_StartPosition == endPosition || _currentState == GameState.GameOver)
             return;
 
         m_Direction = endPosition - m_StartPosition;

@@ -268,6 +268,16 @@ public class Grid
         textObj.transform.localPosition = offset;
         textObj.transform.localPosition = Vector3.zero; 
     }
+    public void DeleteAllBlocks()
+    {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                RemoveGridObject(x, y);
+            }
+        }
+    }
 
     public void DeleteRow(int row)
     {

@@ -41,6 +41,7 @@ public class GridController : MonoBehaviour
     private void GridOnOnFirstBlockInRowZeroPlaced(object sender, EventArgs e)
     {
         eventAggregator.Publish(new FirstBlockInRowZeroEvent());
+        grid.DeleteAllBlocks();
     }
 
     private void OnDestroy()

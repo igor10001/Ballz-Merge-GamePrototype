@@ -20,6 +20,7 @@ public class GameUIController : MonoBehaviour
     public void LoadData()
     {
         scoreModel = GameSaver.LoadData();
+        
     }
 
     public void SaveData()
@@ -27,12 +28,13 @@ public class GameUIController : MonoBehaviour
         GameSaver.SaveData(scoreModel);
     }
     
-    public void SetHighScore(int newHighScore)
+    public void SetHighScore()
     {
-        if (newHighScore > scoreModel.HighScore)
+        if (scoreModel.MovesCount > scoreModel.HighScore)
         {
-            scoreModel.HighScore = newHighScore;
+            scoreModel.HighScore = scoreModel.MovesCount;
             gameUIView.UpdateScore(scoreModel.HighScore);
+            SaveData();
         }
     }
 
@@ -46,5 +48,10 @@ public class GameUIController : MonoBehaviour
     {
         scoreModel.MovesCount = count;
         gameUIView.UpdateMovesCount(scoreModel.MovesCount);
+    }
+
+    public void ShowGameOver()
+    {
+        gameUIView.ShowGameOver();
     }
 }
