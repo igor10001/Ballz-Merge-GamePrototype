@@ -86,7 +86,6 @@ public class Ball : MonoBehaviour
         s_FirstCollisionPoint = Vector3.zero;
         ChangeState(new BallStaticState());
 
-        // Ensure the event is only invoked once
         OnBallStaticState?.Invoke(this, EventArgs.Empty);
     }
 

@@ -19,7 +19,6 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(Application.persistentDataPath);
         CurrentState = GameState.Gameplay;
         _gridController.OnBlocksRowMove += GridControllerOnOnBlocksRowMove;
         _gridController.eventAggregator.Subscribe<FirstBlockInRowZeroEvent>(OnFirstBlockInRowZeroEvent);

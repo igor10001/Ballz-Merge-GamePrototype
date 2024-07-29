@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Numerics;
+using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class LinePrediction : MonoBehaviour
 {
-    /*[Header("Linerenderer Colors")]
+    [Header("Linerenderer Colors")]
     public Color correctLineColor;
     public Color wrongLineColor;
 
@@ -18,33 +20,27 @@ public class LinePrediction : MonoBehaviour
         }
     }
 
-    public void StartPrediction(Vector3 startPos)
+    public void SetCorectColor()
     {
-        startPosition = startPos;
-
+        lineRenderer.startColor = correctLineColor;
+        lineRenderer.endColor = correctLineColor;
     }
 
-    public void UpdatePrediction(Vector3 worldPosition)
+    public void SetWrongColor()
     {
-        Vector3 direction = worldPosition - startPosition;
-        direction.Normalize();
-
-        if (Mathf.Abs(Mathf.Atan2(direction.x, direction.y)) < 1.35f)
-        {
-            lineRenderer.startColor = correctLineColor;
-            lineRenderer.endColor = correctLineColor;
-        }
-        else
-        {
-            lineRenderer.startColor = wrongLineColor;
-            lineRenderer.endColor = wrongLineColor;
-        }
-
-        lineRenderer.SetPosition(1, worldPosition - startPosition);
+        lineRenderer.startColor = correctLineColor;
+        lineRenderer.endColor = correctLineColor;
     }
 
-    public void EndPrediction()
+    public void ContinueDrag(Vector3 endPos, Vector3 startPos)
     {
-        lineRenderer.SetPosition(1, lineRenderer.GetPosition(0));
-    }*/
+        lineRenderer.SetPosition(1, endPos - startPos);
+    }
+
+    public void EndDrag()
+    {
+        lineRenderer.SetPosition(1, Vector3.zero);
+    }
 }
+
+   

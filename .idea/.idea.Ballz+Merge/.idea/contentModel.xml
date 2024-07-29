@@ -51,55 +51,6 @@
             </e>
           </e>
         </e>
-        <e p="CodeMonkey" t="Include">
-          <e p="Assets.cs" t="Include" />
-          <e p="CMDebug.cs" t="Include" />
-          <e p="MonoBehaviours" t="Include">
-            <e p="CameraFollow.cs" t="Include" />
-            <e p="CameraFollowSetup.cs" t="Include" />
-            <e p="ComponentActions.cs" t="Include" />
-            <e p="PositionRendererSorter.cs" t="Include" />
-          </e>
-          <e p="ReadMe.txt" t="Include" />
-          <e p="Utils" t="Include">
-            <e p="Button_Sprite.cs" t="Include" />
-            <e p="Button_UI.cs" t="Include" />
-            <e p="FunctionPeriodic.cs" t="Include" />
-            <e p="FunctionTimer.cs" t="Include" />
-            <e p="FunctionUpdater.cs" t="Include" />
-            <e p="UI_Bar.cs" t="Include" />
-            <e p="UI_BarMultiple.cs" t="Include" />
-            <e p="UI_Sprite.cs" t="Include" />
-            <e p="UI_TextComplex.cs" t="Include" />
-            <e p="UtilsClass.cs" t="Include" />
-            <e p="World_Bar.cs" t="Include" />
-            <e p="World_Mesh.cs" t="Include" />
-            <e p="World_Sprite.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Game(Ballz)" t="Include">
-          <e p="Scripts" t="Include">
-            <e p="AudioManager.cs" t="Include" />
-            <e p="Data Managing" t="Include">
-              <e p="Loader.cs" t="Include" />
-              <e p="SavedGame.cs" t="Include" />
-              <e p="Saver.cs" t="Include" />
-            </e>
-            <e p="GameManager_ballz.cs" t="Include" />
-            <e p="Gameplay" t="Include">
-              <e p="BallLauncher.cs" t="Include" />
-              <e p="Brick.cs" t="Include" />
-              <e p="BrickSpawner.cs" t="Include" />
-              <e p="BricksRow.cs" t="Include" />
-              <e p="ScoreBall.cs" t="Include" />
-              <e p="ScoreRing.cs" t="Include" />
-            </e>
-            <e p="ScoreManager_ballz.cs" t="Include" />
-            <e p="UI" t="Include">
-              <e p="MenuController.cs" t="Include" />
-            </e>
-          </e>
-        </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">

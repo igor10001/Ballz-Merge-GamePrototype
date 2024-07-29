@@ -10,14 +10,10 @@ public class ProjectileLauncher : MonoBehaviour
     private Vector3 m_StartPosition;
     private Vector3 m_EndPosition;
     private Vector3 m_Direction;
-    public event EventHandler OnBallSpawn;
-
-    private LineRenderer m_LineRenderer;
+    [SerializeField] private LinePrediction _linePrediction;
     private Vector3 m_DefaultStartPosition;
 
-    [Header("Linerenderer Colors")]
-    public Color m_CorrectLineColor;
-    public Color m_WrongLineColor;
+   
 
     [Header("Ball")]
     public Ball m_BallPrefab;
@@ -40,7 +36,6 @@ public class ProjectileLauncher : MonoBehaviour
     {
         
 
-        m_LineRenderer = GetComponent<LineRenderer>();
         m_DefaultStartPosition = transform.position;
 
         input.OnDragStart += HandleDragStart;
@@ -57,7 +52,7 @@ public class ProjectileLauncher : MonoBehaviour
             {
                 m_CurrentBall.gameObject.SetActive(false);
             }
-           // m_LineRenderer.SetPosition(1, Vector3.zero);
+            _linePrediction.EndDrag();
         }
     }
 
@@ -109,17 +104,15 @@ public class ProjectileLauncher : MonoBehaviour
 
         if (Mathf.Abs(Mathf.Atan2(tempDirection.x, tempDirection.y)) < 1.35f)
         {
-            m_LineRenderer.startColor = m_CorrectLineColor;
-            m_LineRenderer.endColor = m_CorrectLineColor;
+            _linePrediction.SetCorectColor();
         }
         else
         {
-            m_LineRenderer.startColor = m_WrongLineColor;
-            m_LineRenderer.endColor = m_WrongLineColor;
+           _linePrediction.SetWrongColor();
         }
 
         m_EndPosition = worldPosition;
-        m_LineRenderer.SetPosition(1, m_EndPosition - m_StartPosition);
+        _linePrediction.ContinueDrag(m_EndPosition, m_StartPosition);
     }
 
     private void EndDrag(Vector3 endPosition)
@@ -130,7 +123,7 @@ public class ProjectileLauncher : MonoBehaviour
         m_Direction = endPosition - m_StartPosition;
         m_Direction.Normalize();
 
-        m_LineRenderer.SetPosition(1, Vector3.zero);
+        _linePrediction.EndDrag();
 
         if (Mathf.Abs(Mathf.Atan2(m_Direction.x, m_Direction.y)) < 1.35f)
         {

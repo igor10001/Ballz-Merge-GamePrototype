@@ -22,7 +22,7 @@ public class InputHandler : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Input.touchCount > 0) // Check if there's at least one touch
+        if (Input.touchCount > 0) 
         {
             Touch touch = Input.GetTouch(0);
 

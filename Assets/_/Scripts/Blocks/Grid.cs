@@ -76,14 +76,11 @@ public class Grid
 
         gridObjects[x, y] = newGridObj;
 
-        // Calculate the full scale based on the cell size and the object's renderer bounds
         Vector3 fullScale = new Vector3(cellSize.x / newGridObj.GetComponent<Renderer>().bounds.size.x,
             cellSize.y / newGridObj.GetComponent<Renderer>().bounds.size.y, 1);
 
-        // Set the initial scale to a small size (e.g., 0.1f)
         newGridObj.transform.localScale = fullScale * 0.1f;
 
-        // Animate the scale to the full size
         newGridObj.transform.DOScale(fullScale, 0.5f).SetEase(Ease.OutBack).OnComplete(() =>
         {
             CreateTextMesh(newGridObj);
@@ -101,7 +98,7 @@ public class Grid
                 return mapping.color;
             }
         }
-        return Color.white; // Default color if no mapping is found
+        return Color.white; 
     }
 
     
@@ -188,7 +185,7 @@ public class Grid
                 return chance.blockCount;
             }
         }
-        return 1; // Default to spawning at least one block
+        return 1;
     }
 
     
@@ -213,7 +210,6 @@ public class Grid
     {
         List<Vector2Int> availablePositions = new List<Vector2Int>();
     
-        // Adăugăm toate pozițiile din ultimul rând care sunt libere
         for (int x = 0; x < width; x++)
         {
             if (gridObjects[x, height - 1] == null)
@@ -222,7 +218,6 @@ public class Grid
             }
         }
 
-        // Amestecăm pozițiile pentru a obține o distribuție aleatorie
         for (int i = 0; i < availablePositions.Count; i++)
         {
             Vector2Int temp = availablePositions[i];

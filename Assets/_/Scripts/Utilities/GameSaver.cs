@@ -18,7 +18,6 @@ public static class GameSaver
             string json = File.ReadAllText(saveFilePath);
             
             ScoreModel scoreModel =  JsonUtility.FromJson<ScoreModel>(json);
-            Debug.Log(scoreModel.HighScore);
             return scoreModel;
 
         }

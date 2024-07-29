@@ -10,7 +10,6 @@ public class GameUIView : MonoBehaviour
 
     private void Start()
     {
-        // Hide game over text initially
         gameOverText.gameObject.SetActive(false);
     }
 
@@ -31,11 +30,9 @@ public class GameUIView : MonoBehaviour
     }
     public void AnimateText(TextMeshProUGUI textMesh)
     {
-        // Make sure the text is invisible initially
         textMesh.alpha = 0;
         textMesh.transform.localScale = Vector3.zero;
 
-        // Create a sequence of animations
         Sequence mySequence = DOTween.Sequence();
 
         mySequence.Append(textMesh.DOFade(1, 0.7f)) 
