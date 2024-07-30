@@ -1,19 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Zenject;
-using System;
 
 public class ProjectileLauncher : MonoBehaviour
 {
-    [SerializeField] private InputHandler input;
 
     private Vector3 m_StartPosition;
     private Vector3 m_EndPosition;
     private Vector3 m_Direction;
     [SerializeField] private LinePrediction _linePrediction;
     private Vector3 m_DefaultStartPosition;
-
-   
 
     [Header("Ball")]
     public Ball m_BallPrefab;
@@ -34,14 +30,9 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void Awake()
     {
-        
-
         m_DefaultStartPosition = transform.position;
-
-        input.OnDragStart += HandleDragStart;
-        input.OnDrag += HandleDrag;
-        input.OnDragEnd += HandleDragEnd;
     }
+
     public void SetGameState(GameState newState)
     {
         _currentState = newState;
@@ -61,36 +52,33 @@ public class ProjectileLauncher : MonoBehaviour
         SpawnNewBall();
     }
 
-    private void HandleDragStart(Vector3 startPosition)
+    public void HandleDragStart(Vector3 startPosition)
     {
         if (_currentState == GameState.GameOver) return;
         if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallMovingState)
         {
-            // Do not start drag if the ball is moving
             return;
         }
 
         m_StartPosition = startPosition;
     }
 
-    private void HandleDrag(Vector3 worldPosition)
+    public void HandleDrag(Vector3 worldPosition)
     {
         if (_currentState == GameState.GameOver) return;
         if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallMovingState)
         {
-            // Do not start drag if the ball is moving
             return;
         }
 
         ContinueDrag(worldPosition);
     }
 
-    private void HandleDragEnd(Vector3 endPosition)
+    public void HandleDragEnd(Vector3 endPosition)
     {
         if (_currentState == GameState.GameOver) return;
         if (m_CurrentBall != null && m_CurrentBall.CurrentState is BallMovingState)
         {
-            // Do not start drag if the ball is moving
             return;
         }
 
@@ -108,7 +96,7 @@ public class ProjectileLauncher : MonoBehaviour
         }
         else
         {
-           _linePrediction.SetWrongColor();
+            _linePrediction.SetWrongColor();
         }
 
         m_EndPosition = worldPosition;

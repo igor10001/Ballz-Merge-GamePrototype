@@ -154,7 +154,7 @@ public class Grid
             obj.transform.DOMove(GetWorldPosition(x2, y2), 0.4f).OnComplete(() =>
             { 
                 CheckAndLogFirstBlockInRowZero(x2, y2);
-               // obj.CheckForMerge();
+                obj.CheckForMerge();
             });
         }
     }

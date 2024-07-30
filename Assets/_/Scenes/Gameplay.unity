@@ -441,6 +441,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291160873}
   m_CullTransparentMesh: 1
+--- !u!1 &316114622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 316114623}
+  - component: {fileID: 316114624}
+  m_Layer: 0
+  m_Name: EcsInit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &316114623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316114622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 485143986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &316114624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316114622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f7363b1b259ea4fb192ddefb8ec7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileLauncher: {fileID: 1704861142}
 --- !u!1 &361597040
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +690,7 @@ Transform:
   - {fileID: 710602664}
   - {fileID: 1935211465}
   - {fileID: 610809033}
+  - {fileID: 316114623}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &568932217
@@ -1848,9 +1894,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1704861139}
-  - component: {fileID: 1704861138}
   - component: {fileID: 1704861140}
   - component: {fileID: 1704861141}
+  - component: {fileID: 1704861142}
   m_Layer: 0
   m_Name: ProjectileLauncher
   m_TagString: Untagged
@@ -1858,22 +1904,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1704861138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704861137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 755618cd38b4476486ccfcdd563f4737, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input: {fileID: 424194668}
-  m_CorrectLineColor: {r: 0, g: 0, b: 0, a: 0}
-  m_WrongLineColor: {r: 0, g: 0, b: 0, a: 0}
-  m_BallPrefab: {fileID: 114167077968026030, guid: 760f9966b2a14fd479dbf22b19c1aa8b, type: 3}
 --- !u!4 &1704861139
 Transform:
   m_ObjectHideFlags: 0
@@ -2006,6 +2036,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489cee9208344b5286690555ce333059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctLineColor: {r: 1, g: 1, b: 1, a: 1}
+  wrongLineColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1704861142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704861137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755618cd38b4476486ccfcdd563f4737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _linePrediction: {fileID: 1704861141}
+  m_BallPrefab: {fileID: 114167077968026030, guid: 760f9966b2a14fd479dbf22b19c1aa8b, type: 3}
 --- !u!1 &1817722748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +2096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08b273a114e0814381c540813891611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileLauncher: {fileID: 1704861138}
+  projectileLauncher: {fileID: 0}
   _gridController: {fileID: 710602665}
   _gameUiController: {fileID: 1935211466}
 --- !u!1 &1822168131

@@ -35,6 +35,7 @@ public class Ball : MonoBehaviour
         _projectileLauncher = projectileLauncher;
         _eventAggregator = eventAggregator;
     }
+    
 
     private void Awake()
     {
@@ -50,7 +51,7 @@ public class Ball : MonoBehaviour
     private void Update()
     {
         _currentState.HandleBallState(this);
-
+      
         if (m_Rigidbody2D.bodyType != RigidbodyType2D.Dynamic)
             return;
 

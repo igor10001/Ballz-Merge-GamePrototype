@@ -31,20 +31,29 @@
             <e p="Controllers" t="Include">
               <e p="GameController.cs" t="Include" />
               <e p="GameUIController.cs" t="Include" />
-              <e p="InputHandler.cs" t="Include" />
             </e>
             <e p="Core" t="Include">
               <e p="EventAggregator.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
               <e p="IEventAggregator.cs" t="Include" />
             </e>
+            <e p="Data" t="Include">
+              <e p="InputData.cs" t="Include" />
+            </e>
+            <e p="Ecs" t="Include">
+              <e p="EcsGameStartup.cs" t="Include" />
+            </e>
             <e p="Events" t="Include">
               <e p="BallMoveBlockLineEvent.cs" t="Include" />
               <e p="BallSpawnedEvent.cs" t="Include" />
+              <e p="DragEventHandlingSystem.cs" t="Include" />
               <e p="FirstBlockInRowZeroEvent.cs" t="Include" />
             </e>
             <e p="Installers" t="Include">
               <e p="BallzMergeInstaller.cs" t="Include" />
+            </e>
+            <e p="Systems" t="Include">
+              <e p="InputSystem.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
               <e p="GameUIView.cs" t="Include" />
