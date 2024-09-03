@@ -12,8 +12,8 @@ The game is still in development and is not yet complete. Key mechanics are impl
 
 If you have the time and skills, your contributions are welcome ( i'm too busy now )! There are several areas where the game could be improved:
 
-- **Gameplay Mechanics:** Fine-tuning the existing mechanics to ensure smooth and engaging gameplay.
-- Finish the mechanics of predicting the trajectory
+- **Gameplay Mechanics:**  Finish the mechanics of predicting the trajectory
+
 - **UI/UX Design:** Enhancing the user interface and user experience.
 
 
